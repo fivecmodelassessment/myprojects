@@ -1,0 +1,271 @@
+
+
+
+
+ @media only screen and (min-width : 320px) {
+body{
+	padding: 0;
+	margin: 0;
+	background-image: url("img/pickopick.jpg");
+	background-size: 100% 1600px;
+	background-repeat: no-repeat;
+	height: 100%;
+	
+ 
+}
+}
+
+ @media only screen and (min-width : 320px) {
+header{
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	background-color: #100407; 
+	text-align: center;
+
+
+}
+
+    }
+
+@media only screen and (min-width : 320px) {
+	header div{
+		float: left;
+		position: relative;
+		top: 10px;
+	}
+	.menuPictures1,.menuPictures2,.menuPictures3{
+		width: 40px;
+		height: 40px;
+	}
+	.pic1{
+		position: absolute;
+		z-index: 1;
+		left: 5%;
+		
+	}
+	
+	.pic2{
+		position: absolute;
+		display: inline-block;
+		 left: 45%;
+		z-index: 3;
+	}
+	
+	.pic3{
+		position: absolute;
+		right: 10px;
+		z-index: 2;
+		right: 5%;
+	}
+	
+
+}
+
+
+     @media only screen and (min-width : 320px) {
+
+.whiteOverBg{
+background-color: white;
+
+position: relative; 
+top: 50px;
+left: 5%;
+width: 90%;
+text-align: center;
+box-shadow: 0 0 8px black;
+
+    }
+}
+
+
+     @media only screen and (min-width : 320px) {
+     	.Zaglavie{
+     		color: #af4a64;
+     		text-align: center;
+     		font-size: 22px;
+     		font-family: Arial;
+     		position: relative;
+     		top: 10px;
+     		
+     	}
+
+
+
+     }
+     @media only screen and (min-width : 320px) {
+     	.myPicture{
+     		display: inline-block;
+     		border-radius: 50%;
+     		width: 120px;
+     		height: 120px;
+     		box-shadow: 0 0 3px black;
+
+     	}
+     }
+
+     @media only screen and (min-width : 320px) {
+.Name,.Age,.From,.Intere,.Educ{
+			color: #85122f;
+     		text-align: center;
+     		font-size: 18px;
+     		font-family: Arial;
+     		position: relative;
+     		margin-top: 0px;
+     		margin-bottom: 5px;
+     		
+     	
+     		
+}
+
+
+     }
+
+     @media only screen and (min-width : 320px) {
+.ime,.godini,.grad,.interesi,.obrazovanie{
+	color: #af4a64;
+     		text-align: center;
+     		font-size: 17px;
+     		font-family: Arial;
+     		position: relative;
+     		margin-top: 0px;
+     		margin-bottom: 0px;
+     		padding-right: 5%;
+     		padding-left: 5%;
+
+     		
+}
+
+     }
+     @media only screen and (min-width : 320px) {
+     	.ForName,.ForAge,.ForHouse,.Interests,.Education{
+     		position: relative;
+     		margin-top: 20px;
+     		margin-bottom: 20px;
+     		
+     	}
+     }
+
+
+
+
+
+     footer{
+    width: 100%;
+    display:inline-block;
+    
+    background-color: #100407;
+    height: 55px;
+    position: relative;
+bottom: -5px;
+
+
+
+}
+
+footer .copy{
+display: inline-block;
+    position: relative; 
+    left: 5px;
+    
+}
+footer .phone{
+   display: inline-block;
+   
+float:right;
+ right: 5px;
+  position: relative;
+
+}
+.copy,.phone{
+    float: left;
+font-size:14px;
+    font-family: tahoma;
+    
+    color:#af4a64;
+    
+
+}
+
+
+
+
+@media only screen and (min-width : 320px) {
+
+
+
+
+.dropdownMenu1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 50%;
+    top: 60px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdownMenu1 a {
+    color: black;
+    font-family: Tahoma;
+    padding: 16px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownMenu1 a:hover {
+	background-color: #f1f1f1;
+	border-left: 2px solid #af4a64;
+	border-right:  2px solid #af4a64;
+}
+
+.dropdown:hover .dropdownMenu1 {
+    display: block;
+}
+
+
+}
+
+@media only screen and (min-width : 320px) {
+
+
+
+
+.dropdownMenu2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 40%;
+    top: 60px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    right: 0;
+}
+.dropdownMenu2 a {
+    color: black;
+    font-family: Tahoma;
+    padding: 16px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownMenu2 a:hover {
+	background-color: #f1f1f1;
+	border-left: 2px solid #af4a64;
+	border-right:  2px solid #af4a64;
+}
+
+.dropdown:hover .dropdownMenu2 {
+    display: block;
+}
+
+
+}
+
+@media only screen and (min-width : 320px) {
+    .pokazno1{
+        width: 200px;
+        height: 150px;
+    }
+}

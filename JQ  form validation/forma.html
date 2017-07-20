@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html ng-app>
+   <head>
+      <title>Validation</title>
+     <meta charset="utf-8" name="viewport" content="width=320, initial-scale=1"/>
+      
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+
+   </head>
+   <body >
+<h1>Input form</h1>
+
+
+
+<form id='registration_form' action="test.php" method="post">
+<table>
+<tr>
+	<td> Name: </td>
+	<td><input type="text" class="inputBox" id="nameInput" name='name'></td>
+	<td><span id="error_name" style="color:red;"></span></td>
+	<td><span id="nice_name" style="color:green;"></span></td>
+
+</tr>
+
+
+<tr>
+	<td> Password: </td>
+	<td><input type="password" class="inputBox" id="passInput" name="password"></td>
+	<td><span id="error_pass" style="color:red;"></span></td>
+	<td><span id="nice_pasword" style="color:green;"></span></td>
+	
+</tr>
+
+
+<tr>
+	<td> Retype Password: </td>
+	<td><input type="password" class="inputBox" id="repassInput" name='repassword'></td>
+	<td><span id="error_repass" style="color:red;"></span></td>
+	<td><span id="nice_repasword" style="color:green;"></span></td>
+
+</tr>
+
+
+<tr>
+	<td> Email: </td>
+	<td><input type="email" class="inputBox" id="emailInput" name="email"></td>
+	<td><span id="error_email" style="color:red;"></span></td>
+	<td><span id="nice_email" style="color:green;"></span></td>
+
+</tr>
+
+
+</table>
+
+
+<input type="submit" class="Sub-Button" id='Sub-Button' value='Submit' name="submit">
+<input type="reset" value="Reset!">
+
+
+
+
+
+
+</form>
+<!--
+NAme:<input type="text" ng-model="name">
+Hello {{name}}
+
+
+-->
+
+
+
+<script type="text/javascript">
+
+$(function  () {//JQ error hide
+	$("#error_name").hide();
+	$("#error_pass").hide();
+	$("#error_repass").hide();
+	$("#error_email").hide();
+	//$("#nice_name").hide();
+
+// promenlivi  false
+var error_name = false;
+var error_pass = false;
+var error_repass = false;
+var error_email = false;
+
+$("#nameInput").focusout(function  () {
+	check_name();
+	
+});
+
+$("#passInput").focusout(function  () {
+	check_pass();
+});
+
+$("#repassInput").focusout(function  () {
+	check_repass();
+});
+
+$("#emailInput").focusout(function  () {
+	check_email();
+});
+
+
+/*
+function check_name() {
+	var name_length = $("#nameInput").val().length;
+
+	if (name_length < 5 || name_length >20) {
+$("#error_name").html("Shoud be betwen 5 and 20 chars");
+$("#error_name").show();
+$("#nice_name").hide();
+error_name = true;
+	}else{
+		$("#error_name").hide();
+		$("#nice_name").html("nice");
+		$("#nice_name").show();
+	}
+
+
+}
+
+*/
+function check_name() {
+	var name_length = $("#nameInput").val().length;
+
+	if (name_length < 5 || name_length >20) {
+$("#error_name").html("Shoud be betwen 5 and 20 chars");
+$("#error_name").show();
+
+error_name = true;
+	}else{
+		$("#error_name").hide();
+		
+	}
+
+
+}
+
+
+
+
+
+function check_pass() {
+ 
+ var pass_length = $("#passInput").val().length;
+
+
+ if(pass_length < 5){
+$("#error_pass").html("Must be longer than 5 charecters");
+$("#error_pass").show();
+error_pass = true;
+
+ }else{
+$("#error_pass").hide();
+
+ }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+function check_repass(){
+ 
+ var password_value = $("#passInput").val();
+ var rep_password_value = $("#repassInput").val();
+
+if (password_value != rep_password_value) {
+	$("#error_repass").html("Passwords dont match");
+$("#error_repass").show();
+error_repass = true;
+
+}else{
+	$("#error_repass").hide();
+}
+
+
+
+}
+
+
+function check_email() {
+
+var EmailStructure = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+ var email_value = $("#emailInput").val();
+
+	
+
+	if ( !EmailStructure.test(email_value) ) {	
+$("#error_email").html("Email is not valid");
+$("#error_email").show();
+error_email = true;
+	}else{
+$("#error_email").hide();
+
+	}
+}
+
+
+
+$("#registration_form").submit(function  () {
+
+
+error_name = false;
+error_pass = false;
+ error_repass = false;
+ 
+  error_email = false;
+
+check_name();
+check_pass();
+check_repass();
+check_email();
+
+if (error_name == false && error_pass == false && error_repass==false && error_email==false) {
+return true;
+}else{
+	alert("error");
+return false;
+
+}
+
+
+});
+
+
+
+});
+
+</script>
+   </body>
+   </html>
