@@ -861,7 +861,7 @@ background-color: #2f2424;
 
 
 
-/* HIDDEN FOR NOW */
+/* HIstory page */
 
 
 
@@ -876,4 +876,15 @@ background-color: #2f2424;
 .greengreen{
     color: green;
     font-size: 30px;
+}
+
+.imgslider{
+    position: relative;
+    left: 50px;
+    top: 30px;
+    width: 200px;
+    height: 350px;
+    background-color: green;
+    padding: 0;
+    
 }
