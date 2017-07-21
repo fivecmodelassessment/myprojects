@@ -906,7 +906,13 @@ margin-top: 30px;
     border-radius: 2px;
     margin:10px;
     transition:0.4s;
+    opacity: 0;
+    transform: translateY(-20px);
     
+}
+.history-year-btn-visible{
+    opacity: 1;
+    transform: translateY(0px);
 }
 .history-year-btn:hover{
     background-color: #493838;
@@ -914,6 +920,7 @@ margin-top: 30px;
 }
 .history-year-btn-active{
     background-color: #2f2424;
+    box-shadow: 0 2px 5px -3px black;
 }
 
 
@@ -926,4 +933,104 @@ font-family: 'Roboto', sans-serif;
 margin-top: 30px;
 text-align: center;
 margin-bottom: -15px;
+}
+
+
+.footer{
+    background-color: #493838;
+    height: 250px;
+    margin: 0;
+    width: 100%;
+    border-top: 6px solid salmon;
+    text-align: center;
+
+}
+
+.footer-navigation-div{
+    position: absolute;
+float: left;
+display: inline-block;
+left: 40px;
+width: 200px;
+height: auto;
+
+}
+
+.footer-navigation-p{
+    font-size: 20px;
+    color: #fba59b;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.footer-navigation-div li{
+    text-align: left;
+}
+.footer-navigation-div li,
+.footer-about-me-div li{
+    margin-bottom: 6px;
+    list-style: none;
+}
+.footer-navigation-div li a{
+    text-decoration: none;
+    font-size: 15px;
+    color: salmon;
+      font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+.footer-about-me-div{
+position: absolute;
+float: right;
+display: inline-block;
+right: 40px;
+width: 200px;
+height: auto;
+}
+.footer-about-me-div ul {
+    padding-left: 0;
+padding-right: 60px;
+
+}
+.footer-about-me-div li{
+    text-align: right;
+}
+.footer-about-me-div li a{
+    text-decoration: none;
+    font-size: 15px;
+    color: salmon;
+    text-align: right;
+      font-family: 'Open Sans', sans-serif;
+}
+
+.footer a:hover {
+    text-decoration:underline;
+}
+
+
+
+
+
+.footer-middle{
+    display: inline-block;
+    float: none;
+    margin-top: 40px;
+    width: auto;
+    height: auto;
+}
+.footer-site-logo{
+    width: auto;
+    height: 110px;
+}
+.footer-my-logo{
+    width: 50px;
+    height: 50px;
+}
+.footer-middle p{
+    font-size: 17px;
+    color: salmon;
+    
+    font-family: 'Open Sans', sans-serif;
 }

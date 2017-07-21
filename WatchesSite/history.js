@@ -93,8 +93,8 @@ ReactDOM.render(
 //$("#firstbtn").addClass("brand-filter-sty-active");
 $(document).ready(function () {
 	$("#btn1").addClass("history-year-btn-active");
-});
 
+});
 function LeaterActiveState(ActiveOne) {
     
     $(ActiveOne).click(function  () {
@@ -111,4 +111,25 @@ LeaterActiveState("#btn3");
 LeaterActiveState("#btn4");
 LeaterActiveState("#btn5");
 LeaterActiveState("#btn6");
+
+
+$(window).scroll(function () {
+	
+var  wScroll = $(this).scrollTop();
+
+if (wScroll > $(".passage-p").offset().top ) {
+	$(".history-year-btn-wraper button").each(function  (i) {
+		
+		setTimeout(function  () {
+			
+		
+		$(".history-year-btn-wraper button").eq(i).addClass('history-year-btn-visible');
+	}  , 150 * (i+1) );
+	
+	});
+
+}//end of main if
+
+
+});
 
