@@ -863,28 +863,67 @@ background-color: #2f2424;
 
 /* HIstory page */
 
-
-
-
-
-
-
-.redred{
-    color: red;
-    font-size: 30px;
-}
-.greengreen{
-    color: green;
-    font-size: 30px;
+.main-react-div{
+    margin-top: 50px;
 }
 
-.imgslider{
+.history-main-p{
+margin-top: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: justify;
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+}
+.history-main-p-react{
+    height: 400px;
+}
+.passage-p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.history-year-btn-wraper{
+    text-align: center;
+}
+.history-year-btn{
     position: relative;
-    left: 50px;
-    top: 30px;
-    width: 200px;
-    height: 350px;
-    background-color: green;
-    padding: 0;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    background-color: #675555;
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color:  #f0e6e6;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 2px;
+    margin:10px;
+    transition:0.4s;
     
+}
+.history-year-btn:hover{
+    background-color: #493838;
+    transition:0.4s;
+}
+.history-year-btn-active{
+    background-color: #2f2424;
+}
+
+
+.history-brands-title{
+    display: block;
+width: auto;
+height: auto;
+font-size: 75px;
+font-family: 'Roboto', sans-serif;
+margin-top: 30px;
+text-align: center;
+margin-bottom: -15px;
 }
