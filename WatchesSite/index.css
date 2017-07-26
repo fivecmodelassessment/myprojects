@@ -1057,8 +1057,66 @@ padding-right: 60px;
 
 /*CONTACTS PAGE*/
 
+.contacts-send-us-msg{
+    display: block;
+height: auto;
+font-size: 30px;
+font-family: 'Roboto', sans-serif;
+text-align: left;
+margin-bottom: 10px;
+width: 300px;
+color: #626161;
+margin-top: 50px;
+}
+.contact-form-and-img-wraper{
+    width: auto;
+    height: 450px;
+}
+.contact-location-and-phones-wraper{
+    width: auto;
+    height: 500px;
+    background-color: blue;
+}
+.contacts-father-div{
+    background-color: #E9D0A04D;
+    width: 500px;
+    height: 420px;
+    display: inline-block;
+    float: left;
+    box-shadow: 0 0 2px #39383880;
+}
+.contact-gif-wraper{
+    height: 420px;
+display: inline-block;
+float: left;
+width: 350px;
+
+   
+}
+.contact-gif{
+    width: 300px;
+height: auto;
+position: relative;
+top: 60px;
+left: 40px;
+
+}
+.contacts-row-div{
+    position: relative;
+    top: 10px;
+   
+    left: 20px;
+    width: 500px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
 .contact-input-wraper{
-   width: 280px;
+   width: 220px;
 margin-bottom: 20px;
 margin-right: 20px;
 text-align: center;
@@ -1068,15 +1126,69 @@ display: inline-block;
 }
 .contact-input-label{
     display: block;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    color: #3f3d3d;
+}
+.contacts-input{
+    width: 200px;
+    height: 30px;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 0 3px #bab9b9;;
+    border-radius: 1px;
+    border: none;
+    outline: none; 
+    padding-left: 10px;
 }
 
 
+.contacts-textarea-field{
+    width: 450px;
+    position: relative;
+    height: 100px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 3px #bab9b9;;
+    left: 5px;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 5px;
+    padding-top: 5px;
+font-size: 15px;
 
+}
+.contact-msg-row-3{
+    height: 140px;
+}
 
+.contacts-row-submit-butn{
+    text-align: right;
+    width: 460px;
+}
+.contacts-submit-btn{
+    position: relative;
+display: inline-block;
+font-size: 20px;
+text-align: center;
+background-color: #675555;
+width: 150px;
+height: 40px;
+border: none;
+outline: none;
+cursor: pointer;
+color: #f0e6e6;
+font-family: 'Roboto', sans-serif;
+border-radius: 2px;
+margin: 10px;
+transition:0.4s;
 
+}
 
-
-
+.contacts-submit-btn:hover{
+background-color: #493838;
+    transition:0.4s;
+}
 
 
 
