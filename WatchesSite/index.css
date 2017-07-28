@@ -1075,7 +1075,8 @@ margin-top: 50px;
 .contact-location-and-phones-wraper{
     width: auto;
     height: 500px;
-    background-color: blue;
+    background-color: #E9D0A04D;
+    box-shadow: 0 0 2px #39383880;
 }
 .contacts-father-div{
     background-color: #E9D0A04D;
@@ -1197,11 +1198,44 @@ background-color: #493838;
 
 
 
+.contact-table{
+    width: 857px;
+}
+.contact-table-th-p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
 
 
+.contacts-table-row:nth-child(even){
+    background-color: #ffb6b633;
+}
+.contacts-table-row:nth-child(odd){
+    background-color: #ffb6b666;
+}
+.contacts-table-row-td-div{
+height: 40px;
+}
+.contacts-table-img{
+width: 30px;
+float: left;
+padding: 5px;
 
 
+}
+.contacts-table-row-text{
+   margin: 0;
+padding-top: 9px;
+padding-left: 50px;
+display: block;
+text-align: left;
+font-family: 'Open Sans', sans-serif;
+color: #3f3d3d;
+font-size: 16px;
 
+}
 
 
 
