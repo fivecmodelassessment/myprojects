@@ -1137,13 +1137,17 @@ display: inline-block;
     width: 200px;
     height: 30px;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 0 3px #bab9b9;;
+    box-shadow: 0 0 3px #bab9b9;
     border-radius: 1px;
     border: none;
     outline: none; 
     padding-left: 10px;
+    transition: 0.3s;
 }
-
+.contacts-input:focus{
+ box-shadow: 0 0 3px #000;
+    transition: 0.3s;
+}
 
 .contacts-textarea-field{
     width: 450px;
@@ -1156,8 +1160,12 @@ display: inline-block;
     font-family: 'Open Sans', sans-serif;
     padding-left: 5px;
     padding-top: 5px;
-font-size: 15px;
+font-size: 15px;  transition: 0.3s;
 
+}
+.contacts-textarea-field:focus{
+ box-shadow: 0 0 3px #000;
+    transition: 0.3s;
 }
 .contact-msg-row-3{
     height: 140px;
