@@ -60,6 +60,7 @@ render:function () {
 
 var FirstName = React.createClass({ 
 
+
  render : function() {
        
         return (
@@ -218,6 +219,34 @@ var RowDiv4 = React.createClass({
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //spisus s contakti
 var Country = React.createClass({
     render:function () {
@@ -232,11 +261,12 @@ var Country = React.createClass({
 
 
 var Location = React.createClass({
+   
     render:function () {
         return(
             <div className="contacts-table-row-td-div">
                 <img src="assets/locationicon.png" className="contacts-table-img"/>
-                <p className="contacts-table-row-text">{this.props.addres}</p>
+                <p className="contacts-table-row-text" >{this.props.addres}</p>
             </div>
             )
     }
@@ -256,7 +286,8 @@ var PhoneNumber = React.createClass({
 
 
 var TableHeading = React.createClass({
-    render:function () {
+     
+render:function () {
         return(
             
             <tr className="contacts-table-heading">
@@ -264,7 +295,7 @@ var TableHeading = React.createClass({
                     <p className="contact-table-th-p">Country</p>
                 </td>
                 <td>
-                  <p className="contact-table-th-p">Adress</p>
+                  <p className="contact-table-th-p" >Adress</p>
                 </td>
                 <td>
                    <p className="contact-table-th-p">Phone</p>
@@ -276,6 +307,7 @@ var TableHeading = React.createClass({
 });
 
 var TableRow = React.createClass({
+    
     render:function () {
         return(
             
@@ -285,6 +317,7 @@ var TableRow = React.createClass({
                 </td>
                 <td>
                    <Location addres={this.props.addres}/>
+                    
                 </td>
                 <td>
                     <PhoneNumber phone={this.props.phone}/>
@@ -298,51 +331,186 @@ var TableRow = React.createClass({
 
 
 
+
+
+
+
+
+
+
+
+
 var Table = React.createClass({
+  
+
     render:function () {
         return(
             <table className="contact-table">
+                <tbody>
                 <TableHeading/>
+                
                 <TableRow   src={this.props.data.flag.flag1}
                             countryname={this.props.data.country.country1} 
                             phone={this.props.data.phone.phone1}
                             addres={this.props.data.location.location1} 
+                            
+                            
+                            />
+                <TableRow   src={this.props.data.flag.flag1}
+                            countryname={this.props.data.country.country1} 
+                            phone={this.props.data.phone.phone6}
+                            addres={this.props.data.location.location6}
+                            
 
                             />
                 <TableRow   src={this.props.data.flag.flag2}
                             countryname={this.props.data.country.country2} 
                             phone={this.props.data.phone.phone2}
-                            addres={this.props.data.location.location2} 
+                            addres={this.props.data.location.location2}
+                            
 
                             />
                 <TableRow   src={this.props.data.flag.flag2}
                             countryname={this.props.data.country.country2} 
-                            phone={this.props.data.phone.phone2}
-                            addres={this.props.data.location.location2} 
-
-                            />
-                <TableRow   src={this.props.data.flag.flag3}
-                            countryname={this.props.data.country.country3} 
                             phone={this.props.data.phone.phone3}
-                            addres={this.props.data.location.location3} 
+                            addres={this.props.data.location.location3}
+                            
 
                             />
-                 <TableRow   src={this.props.data.flag.flag4}
-                            countryname={this.props.data.country.country4} 
+                 <TableRow  src={this.props.data.flag.flag3}
+                            countryname={this.props.data.country.country3} 
                             phone={this.props.data.phone.phone4}
-                            addres={this.props.data.location.location4} 
+                            addres={this.props.data.location.location4}
+                            
 
                             />
+                <TableRow   src={this.props.data.flag.flag4}
+                            countryname={this.props.data.country.country4} 
+                            phone={this.props.data.phone.phone5}
+                            addres={this.props.data.location.location5}
+                            
+
+                            />
+                            </tbody>
             </table>
             )
     }
 });
 
 
-
-
-
 //krai na spisuka s kontakci
+
+var Maps = React.createClass({
+
+
+   getInitialState: function () {
+        return{
+            currentmap:1,
+            maptitle:1
+        }
+    },
+ /*
+{this.props.data.map.map1}
+*/
+
+ChangeMap1:function () {
+    this.setState({ 
+        currentmap:1,
+        maptitle:1 
+    });
+},
+ChangeMap2:function () {
+    this.setState({ 
+        currentmap:2,
+        maptitle:2 
+    });
+},
+
+ChangeMap3:function () {
+    this.setState({ 
+        currentmap:3,
+        maptitle:3 
+    });
+},
+ChangeMap4:function () {
+    this.setState({ 
+        currentmap:4,
+        maptitle:4 
+    });
+},
+ChangeMap5:function () {
+    this.setState({ 
+        currentmap:5,
+        maptitle:5 
+    });
+},
+ChangeMap6:function () {
+    this.setState({ 
+        currentmap:6,
+        maptitle:6 
+    });
+},
+
+
+
+
+    render:function () {
+        var mapCurr;
+        var mapTitle;
+        var ClassNameBtnAvtive = "contacts-maps-buttons contacts-maps-buttons-avtive";
+        var ClassNameBtnUnactive="contacts-maps-buttons";
+        if (this.state.currentmap == 1) {
+            mapCurr = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.0488266754514!2d24.747870215596354!3d42.14924195638109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1a2d28e4d79%3A0x3695d2011e91dc4e!2sul.+%22Zhelezarska%22+18%2C+4000+Kapana%2C+Plovdiv!5e0!3m2!1sen!2sbg!4v1501585499118";
+            mapTitle = "Bulgaria, Plovdiv";
+           
+        }
+        if (this.state.currentmap == 2) {
+            mapCurr = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.4347812559517!2d23.318749115609666!3d42.69451382190647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa856c5021a881%3A0x49293a9f619fd306!2sbul.+%22Vitosha%22+13%2C+1000+Sofia+Center%2C+Sofia!5e0!3m2!1sen!2sbg!4v1501585577048";
+            mapTitle = "Bulgaria, Sofia";
+             
+        }
+        if (this.state.currentmap == 3) {
+            mapCurr = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2558.841105515255!2d8.668821115807647!3d50.10798101986281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0eaa6f266dc1%3A0x9eb7375aaa118996!2sM%C3%BCnchener+Str.+13%2C+60329+Frankfurt+am+Main%2C+Germany!5e0!3m2!1sen!2sbg!4v1501586119365";
+            mapTitle = "Germany, Frankfurt";
+             
+        }
+        if (this.state.currentmap == 4) {
+            mapCurr = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9653156471945!2d7.465488715848371!3d51.51385231805229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b9175f501acb25%3A0xc6b9970d36ff9596!2sKleppingstra%C3%9Fe+3%2C+44135+Dortmund%2C+Germany!5e0!3m2!1sen!2sbg!4v1501539628924";
+            mapTitle = "Germany, Dortmund";
+             
+        }
+        if (this.state.currentmap == 5) {
+            mapCurr = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.1592641516754!2d4.3502251158289535!3d50.846734966611784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c47f4614f1f1%3A0xb03c355d8fe2cfb6!2sGrand+Place!5e0!3m2!1sen!2sbg!4v1501586238019";
+            mapTitle = "Belgium, Brussels";
+             
+        }
+        if (this.state.currentmap == 6) {
+            mapCurr = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.499095772156!2d12.48542741559036!3d41.903628471794995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60552e033001%3A0xb1926e961194e037!2sVia+Sistina%2C+4%2C+00187+Roma+RM%2C+Italy!5e0!3m2!1sen!2sbg!4v1501586195618" ;
+            mapTitle = "Italy, Rome";
+             
+        }
+        return(
+            <div className="contacts-location-maps-wraper">
+            <p className="contacts-location-maps-title">{mapTitle}</p>
+            
+            <div className="contacts-maps-buttons-wraper">
+                <button className={(this.state.currentmap == 1)?ClassNameBtnAvtive:ClassNameBtnUnactive} onClick={this.ChangeMap1} >Plovdiv</button>
+                <button className={(this.state.currentmap == 2)?ClassNameBtnAvtive:ClassNameBtnUnactive} onClick={this.ChangeMap2} >Sofia</button>
+                <button className={(this.state.currentmap == 3)?ClassNameBtnAvtive:ClassNameBtnUnactive} onClick={this.ChangeMap3} >Frankfurt</button>
+                <button className={(this.state.currentmap == 4)?ClassNameBtnAvtive:ClassNameBtnUnactive} onClick={this.ChangeMap4} >Dortmund</button>
+                <button className={(this.state.currentmap == 5)?ClassNameBtnAvtive:ClassNameBtnUnactive} onClick={this.ChangeMap5} >Brussels</button>
+                <button className={(this.state.currentmap == 6)?ClassNameBtnAvtive:ClassNameBtnUnactive} onClick={this.ChangeMap6} >Rome</button>
+            </div>
+            
+            
+                <iframe className="contacts-location-maps" src={mapCurr}></iframe>
+            </div>
+
+            )
+    }
+});
+
+
 
 var MainFatherDiv = React.createClass({ 
 
@@ -368,14 +536,16 @@ var MainFatherDiv = React.createClass({
     	        			</div>
     	        		</div>
 
+
+
+
+
             			<Headings heading="Find or Call us"/>
             			<div className="contact-location-and-phones-wraper">
             				
                             <Table data={this.props.data} />
-                                
-
+                                <Maps />
             			</div>
-    		        
             	</div>
             )
         }
@@ -389,6 +559,7 @@ var MainFatherDiv = React.createClass({
 var DATA = { 
 
 
+
 flag: { 
         flag1:'assets/flags/bulg.png',
         flag2:'assets/flags/germ.png',
@@ -398,36 +569,54 @@ flag: {
 
 
 country: { 
-        country1:'Bulgaria     ',
-        country2:'Germany    ',
-        country3:'Belgum     ',
-        country4:'Italy     '
+        country1:'Bulgaria',
+        country2:'Germany',
+        country3:'Belgium',
+        country4:'Italy'
                 }  , 
 
 
 location: { 
-        location1:'Plovdiv str"Jelezarska" 18',
-        location2:'ffffff',
-        location3:'sssss',
-        location4:'sdddddd'
+        location1:'Plovdiv, 18 Jelezarska Str.',
+        location2:'Frankfurt, 13 Münchener Str.',
+        location3:'Dortmund, 3 Kleppingstraße Str.',
+        location4:'Brussels, Grand-Place',
+        location5:'Rome, 4 Via Sistina ',
+        location6:'Sofia, Vitosha bul.'
                 }  ,
 
 
  phone: { 
         phone1:'+359/ 889 190 860',
         phone2:'+49/022 453 1225',
-        phone3:'+74/993 783 7284',
-        phone4:'+234/ 748 739 003'
-                }  
+        phone3:'+49/034 532 3328',
+        phone4:'+74/993 783 7284',
+        phone5:'+234/ 748 739 003',
+        phone6:'+359/ 998 344 533'
+
+                }
+
+
 
 };
 
 
 
+
+
+
+
+
+  
+     
+
+
+
+
+
+
+
 ReactDOM.render(<MainFatherDiv data={DATA}/>,document.getElementById('testdivreact'));
-
-
-
 /*
 
 class ProductCategoryRow extends React.Component {

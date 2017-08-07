@@ -51,7 +51,7 @@ var Test = React.createClass({
          if (this.state.year == 2000){ 
             text = "The watch is based on a chip developed by the breakthrough Chip Scale Atomic Clock (CSAC) program of the US Defense Advanced Research Projects Agency (DARPA) which was initiated in 2001, and produced the first prototype atomic clock chip in 2005.[39][40] Symmetricom began manufacturing the chips in 2011. Like other cesium clocks the watch keeps time with an ultraprecise 9.192631770 GHz microwave signal produced by electron transitions between two hyperfine energy levels in atoms of cesium, which is divided down by digital counters to give a 1 Hz clock signal to drive the hands. On the chip, liquid metal cesium in a tiny capsule is heated to vaporize the cesium. A laser shines a beam of infrared light modulated by a microwave oscillator through the capsule onto a photodetector. When the oscillator is at the precise frequency of the transition, the cesium atoms absorb the light, reducing the output of the photodetector. The output of the photodetector is used as feedback in a phase locked loop circuit to keep the oscillator at the correct frequency. The breakthrough that allowed a rack-sized cesium clock to be shrunk small enough to fit on a chip was a technique called coherent population trapping, which eliminated the need for a bulky microwave cavity."
         } 
-       return (
+  return (
 
         	<div >
 

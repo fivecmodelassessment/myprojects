@@ -256,6 +256,7 @@ figure:hover {
     padding: 15px;
     text-align: center;
     text-decoration: none;
+    border-radius: 25px;
 }
 .fa:hover {
     opacity: 0.7;
@@ -1074,7 +1075,7 @@ margin-top: 50px;
 }
 .contact-location-and-phones-wraper{
     width: auto;
-    height: 500px;
+    height: 600px;
     background-color: #E9D0A04D;
     box-shadow: 0 0 2px #39383880;
 }
@@ -1224,37 +1225,88 @@ background-color: #493838;
     background-color: #ffb6b666;
 }
 .contacts-table-row-td-div{
-height: 40px;
+height: 30px;
 }
 .contacts-table-img{
-width: 30px;
+width: 20px;
 float: left;
 padding: 5px;
 
 
+
 }
 .contacts-table-row-text{
-   margin: 0;
-padding-top: 9px;
-padding-left: 50px;
-display: block;
-text-align: left;
-font-family: 'Open Sans', sans-serif;
-color: #3f3d3d;
-font-size: 16px;
+margin: 0;
+    padding-top: 6px;
+    padding-left: 50px;
+    display: block;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    color: #3f3d3d;
+    font-size: 14px;
+
 
 }
 
 
+.contacts-location-maps-wraper{
+    text-align: center;
+}
+
+.contacts-location-maps{
+    border:none;
+    outline: none;
+    box-shadow: 0 0 3px #39383880;
+    display: inline-block;
+    width: 800px;
+    position: relative;
+    top: 15px;
+    height: 200px;
+}
 
 
 
+.contacts-maps-buttons-wraper{
+    width: 850px;
+    text-align: center;
+}
 
 
+.contacts-maps-buttons{
+    position: relative;
+display: inline-block;
+font-size: 17px;
+text-align: center;
+background-color: #874c45cc;
+width: 100px;
+height: 30px;
+border: none;
+outline: none;
+cursor: pointer;
+color: #f0e6e6;
+font-family: 'Roboto', sans-serif;
+border-radius: 2px;
+transition: 0.4s;
+margin-left: 26px;
 
+    
+}
+.contacts-maps-buttons:hover{
+  background-color: #874c45;
+  transition: 0.4s;
+}
+.contacts-maps-buttons-avtive{
+    background-color: #603631;
+  transition: 0.4s;
+  box-shadow: 0 3px 5px -3px #000c;
+}
+.contacts-location-maps-title{
+font-family: 'Open Sans', sans-serif;
+font-size: 23px;
+text-align: center;
 
-
-
+color: #353232cc;
+}
 
 
 
