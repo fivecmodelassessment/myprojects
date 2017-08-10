@@ -26,172 +26,210 @@ render : function() {
 
 */
 
-var FirstName = React.createClass({ 
-
-render : function() {
+var Clicker = React.createClass({
 
 
-const data = this.props.data;
 
-const dataList = data.map(watch=>{
-	return(
-			<figure className="store-watch-object"><img src={watch.img} className="store-fiure-img "/>
-				    <figcaption className="store-title-figure"><strong>{watch.name}</strong> {watch.model}</figcaption>
-				    <figcaption className="store-price-figure">Price:<strong> {watch.price}$</strong><span> {watch.off}% OFF</span></figcaption>
-			</figure>
+render:function () {
+	return <button className="store-filter-apply-button" onClick={this.props.clickTest}>Click4Test</button>
+}
+
+});
+
+
+
+
+var List = React.createClass({
+	
+
+	renderAll:function() {
+		const data = this.props.data;
+
+				const dataList = data.map(watch=>{
+					return(
+							<figure key={watch.key} id={watch.id} className={"store-watch-object" + ' ' + watch.gender + ' ' + watch.color}><img src={watch.img} className="store-fiure-img "/>
+								    <figcaption className="store-title-figure"><strong>{watch.name}</strong> {watch.model}</figcaption>
+								    <figcaption className="store-price-figure">Price:<strong> {watch.price}$</strong><span> {watch.off}% OFF</span></figcaption>
+							</figure>
+							
+							)
+					});
+				return dataList;
+	},
+
+	render:function () {
+		
+		return (
+			<div>{this.renderAll()}</div>
+			)
+		}
+
+});
+
+
+
+
+
+var Store = React.createClass({ 
+
+	SortMan:function () {
 			
-	)
-	//console.log(object.name , object.age);
-
-})
+	},
 
 
 
-       return (
 
-       		<div className="store-app-all-wraper">
-<div className="store-filters-wraper">fsafaf</div>
+	render : function() {
+		
+				return (
 
-        	<div className="store-articules-wraper">
-	        	{dataList}
-	        </div>
-	        </div>
-        )
-    }
+		       		<div className="store-app-all-wraper">
+					<div className="store-filters-wraper">
+						<p className="store-results-and-filter-title-p">Filters</p>
+						<button onClick={this.SortMan} id="manButton" className="store-filter-apply-button">Man</button>
+						<button onClick={this.SortWoman} id="womanButton" className="store-filter-apply-button">Woman</button>
+						<Clicker clickTest={this.ClickTestFUN}/>
+						<button onClick={this.SortMan} id="brightButton" className="store-filter-apply-button">Bright</button>
+						<button onClick={this.SortWoman} id="darkButton" className="store-filter-apply-button">Dark</button>
+
+
+					</div>
+
+		        	<div className="store-articules-wraper">
+			        	<p className="store-results-and-filter-title-p">Results</p>
+			        	<List data={this.props.data}/>
+			        </div>
+			        </div>
+		        )
+	}
 
 
 });
-/*
 
+$(document).ready(function () {
+		
+		$("#manButton").click(function () {
+			
+			$(".store-watch-object").addClass("store-filter-transition");
+			
+			setTimeout(function () {
+				$(".class_man").removeClass("store-filter-transition");
+			},300);
+		});
+		$("#womanButton").click(function () {
+			
+			$(".store-watch-object").addClass("store-filter-transition");
+			
+			setTimeout(function () {
+				$(".class_woman").removeClass("store-filter-transition");
+			},300);
+		});
+		$("#brightButton").click(function () {
+			
+			$(".store-watch-object").addClass("store-filter-transition");
+			
+			setTimeout(function () {
+				$(".class_bright").removeClass("store-filter-transition");
+			},300);
+		});
+		$("#darkButton").click(function () {
+			
+			$(".store-watch-object").addClass("store-filter-transition");
+			
+			setTimeout(function () {
+				$(".class_dark").removeClass("store-filter-transition");
+			},300);
+		});
 
+		
+});
 
+var data2 =[
+   {
+      key:'1',
+      id:'watch1',
+      name:'Versace',
+      model:'V-Helix Ivory Dial Leather Ladies Watch',
+      img:'assets/watch1.png',
+      price:'455',
+      off:'23',
+      gender:'class_man',
+      color:'class_bright'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-var DATA1 = { 
-
-
-
-flag: { 
-        flag1:'assets/flags/bulg.png',
-        flag2:'assets/flags/germ.png',
-        flag3:'assets/flags/belg.png',
-        flag4:'assets/flags/ital.png',
-        flag5:'',
-        flag6:''
-                }, 
-
-
-country: { 
-        country1:'Bulgaria',
-        country2:'Germany',
-        country3:'Belgium',
-        country4:'Italy',
-        country5:'Belgium',
-        country6:'Italy'
-                }  , 
-
-
-location: { 
-        location1:'Plovdiv, 18 Jelezarska Str.',
-        location2:'Frankfurt, 13 Münchener Str.',
-        location3:'Dortmund, 3 Kleppingstraße Str.',
-        location4:'Brussels, Grand-Place',
-        location5:'Rome, 4 Via Sistina ',
-        location6:'Sofia, Vitosha bul.'
-                }  ,
-
-
- phone: { 
-        phone1:'+359/ 889 190 860',
-        phone2:'+49/022 453 1225',
-        phone3:'+49/034 532 3328',
-        phone4:'+74/993 783 7284',
-        phone5:'+234/ 748 739 003',
-        phone6:'+359/ 998 344 533'
-
-                }
-<figure class="figures fig1"><img src="assets/watch1.png" class="watches watch1">
-                    <figcaption class="title-figure"><strong>Versace</strong> V-Helix Ivory Dial Leather Ladies Watch </figcaption>
-                    <figcaption class="price-figure">Price: 399$ <span><strong>30% OFF</strong></span>
-                    </figcaption>
-                </figure>
-                <figure class="figures fig2"><img src="assets/watch2.png" class="watches watch2">
-                    <figcaption class="title-figure"><strong>Frederique Constant</strong> Classics Silver Dial Men's Watch  </figcaption>
-                    <figcaption class="price-figure">Price: 679$ <span><strong>35% OFF</strong></span>
-                    </figcaption>
-                </figure>
-                <figure class="figures fig3"><img src="assets/watch3.png" class="watches watch3">
-                    <figcaption class="title-figure"><strong>Arowatch</strong> Ivory Leather Man Watch </figcaption>
-                    <figcaption class="price-figure">Price: 788$ <span><strong>45% OFF</strong></span>
-                    </figcaption>
-                </figure>
-
-                <figure class="figures fig4"><img src="assets/watch4.png" class="watches watch4">
-                    <figcaption class="title-figure"><strong>Technomarine</strong> Medusa Chronograph White Dial </figcaption>
-                    <figcaption class="price-figure">Price: 299$ <span><strong>20% OFF</strong></span>
-                    </figcaption>
-                </figure>
-                <figure class="figures fig5"><img src="assets/watch5.png" class="watches watch5">
-                    <figcaption class="title-figure"><strong>Tissot</strong> Classic Tradition Chronograph Men's Watch </figcaption>
-                    <figcaption class="price-figure">Price: 366$ <span><strong>55% OFF</strong></span>
-                    </figcaption>
-                </figure>
-                <figure class="figures fig6"><img src="assets/watch6.png" class="watches watch6">
-                    <figcaption class="title-figure"><strong>Tissot</strong> Heritage Visodate Automatic Men's Watch </figcaption>
-                    <figcaption class="price-figure">Price: 577$ <span><strong>64% OFF</strong></span>
-                    </figcaption>
-                </figure>
-{name:'', model:'', img:'', price:'646', off:'33'},
-{name:'', model:'', img:'', price:'545', off:'16'},
-{name:'', model:'', img:'', price:'126', off:'43'},
-{name:'', model:'', img:'', price:'644', off:'53'},
-{name:'', model:'', img:'', price:'244', off:'23'},
-{name:'', model:'', img:'', price:'122', off:'12'},
-{name:'', model:'', img:'', price:'344', off:'42'},
-{name:'', model:'', img:'', price:'563', off:'54'}
-
-};*/
-var data2 = [
-{name:'Versace', model:'V-Helix Ivory Dial Leather Ladies Watch', img:'assets/watch1.png', price:'455', off:'23'},
-{name:'Frederique Constant', model:' Classics Silver Dial Men Watch ', img:'assets/watch2.png', price:'388', off:'43'},
-{name:'Arowatch', model:' Ivory Leather Man Watch ', img:'assets/watch3.png', price:'345', off:'35'},
-{name:'Technomarine', model:' Medusa Chronograph White Dial ', img:'assets/watch4.png', price:'677', off:'35'},
-{name:'Tissot', model:' Classic Tradition Chronograph Men Watch', img:'assets/watch5.png', price:'342', off:'23'},
-{name:'Tissot', model:' Heritage Visodate Automatic Men Watch', img:'assets/watch6.png', price:'353', off:'56'}
-
+   },
+   {
+      key:'2',
+      id:'watch2',
+      name:'Frederique Constant',
+      model:' Classics Silver Dial Men Watch ',
+      img:'assets/watch2.png',
+      price:'388',
+      off:'43',
+      gender:'class_man',
+      color:'class_bright'
+   },
+   {
+      key:'3',
+      id:'watch3',
+      name:'Arowatch',
+      model:' Ivory Leather Man Watch ',
+      img:'assets/watch3.png',
+      price:'345',
+      off:'35',
+      gender:'class_woman',
+      color:'class_dark'
+   },
+   {
+      key:'4',
+      id:'watch4',
+      name:'Technomarine',
+      model:' Medusa Chronograph White Dial ',
+      img:'assets/watch4.png',
+      price:'677',
+      off:'35',
+      gender:'class_man',
+      color:'class_dark'
+   },
+   {
+      key:'5',
+      id:'watch5',
+      name:'Tissot',
+      model:' Classic Tradition Chronograph Men Watch',
+      img:'assets/watch5.png',
+      price:'342',
+      off:'23',
+      gender:'class_man',
+      color:'class_dark'
+   },
+   {
+      key:'6',
+      id:'watch6',
+      name:'Tissot',
+      model:' Heritage Visodate Automatic Men Watch',
+      img:'assets/watch6.png',
+      price:'353',
+      off:'56',
+      gender:'class_woman',
+      color:'class_bright'
+   },
+   {
+      key:'7',
+      id:'watch7',
+      name:'Tissot',
+      model:' Classic Tradition Chronograph Men Watch',
+      img:'assets/watch5.png',
+      price:'342',
+      off:'23',
+      gender:'class_woman',
+      color:'class_bright'
+   }
 ];
 
 
 
-ReactDOM.render( <FirstName data={data2}/> , document.getElementById('store-react-father'));
 
+ReactDOM.render( <Store data={data2}/> , document.getElementById('store-react-father'));
 
-
-
-
-/*
-construkciq na figure 
-
-<figure class="figures fig1"><img src="assets/watch1.png" class="watches watch1">
-    <figcaption class="title-figure"><strong>Versace</strong> V-Helix Ivory Dial Leather Ladies Watch </figcaption>
-    <figcaption class="price-figure">Price: 399$ <span><strong>30% OFF</strong></span>
-    </figcaption>
-</figure>
-
-
-*/
 
 
 
