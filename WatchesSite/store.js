@@ -36,18 +36,48 @@ render:function () {
 
 });
 
+var Modal4Watch = React.createClass({
 
+	render:function () {
+	
+		return(
+			<div className='store-watch-modal-wraper'>
+
+
+				<div className='store-watch-modal'>
+					<strong className="modal-close-btn" >&#10060;</strong>
+					<div className="modal-img-wraper"><img className="modal-img" src={data2[0].img}/></div>
+					<div className="modal-data-wraper">
+						<p className="modal-watch-name"><strong id="span-name">{data2[0].name}</strong></p>
+						<p className="modal-watch-model"><span id="span-model">{data2[0].model}</span></p>
+						<p className="modal-watch-ar_num">Item #<span id="span-ar_num">{data2[0].articule_number}</span></p>
+						<p className="modal-original-price">Order now: +359 887 234 562</p>
+						<p className="modal-watch-price"><i id="span-price">{"$"+data2[0].price}</i>  <span  className="modal-watch-off" id="span-off">{data2[0].off+"% off"}</span></p>
+						<p className="modal-original-price">Original price:  <span id="span-ori-price"></span></p>
+						<p className="modal-original-price shiping-price">Shiping price:  <span id="span-shipping"></span></p>
+						<p className="modal-original-price avaliblility-p">In stock:  <span id="span-avalible"></span></p>
+						<button id="buy-now-btn" className="modal-buy-btn">BUY NOW</button>
+						
+					</div>
+				</div>
+			</div>
+			)
+	}
+
+
+});
 
 
 var List = React.createClass({
 	clickEring:function () {
-		console.log("ffasfsafas");	
+		console.log("hey");	
 	},
 
 	renderAll:function() {
 		const data = this.props.data;
 
 				const dataList = data.map(watch=>{
+
 					return(
 							<figure key={watch.key} onClick={this.clickEring} id={watch.id} className={"store-watch-object" + ' ' + watch.gender + ' ' + watch.color }><img src={watch.img} className="store-fiure-img "/>
 								    <figcaption className="store-title-figure"><strong>{watch.name}</strong> {watch.model}</figcaption>
@@ -109,8 +139,8 @@ var Filters = React.createClass({
 					</div>
 					<div>
 						<p className="store-filters-section-title">Price</p>
-						<label className="">From:<input type="number" className="filters-price-input" id="filter_from_input"/></label>
-						<label className="">To:<input type="number" className="filters-price-input" id="filter_to_input"/></label>
+						<label className="store-filter-checkbox-label">From:<input type="text" className="filters-price-input" id="filter_from_input"/></label>
+						<label className="store-filter-checkbox-label">To:<input type="text" className="filters-price-input" id="filter_to_input"/></label>
 					</div>
 
 			</div>
@@ -132,6 +162,7 @@ var Store = React.createClass({
 				return (
 
 		       		<div className="store-app-all-wraper">
+		       		<Modal4Watch modalData={this.props.data}/>
 					<div className="store-filters-wraper">
 						<p className="store-results-and-filter-title-p">Filters</p>
 						<Filters/>
@@ -139,7 +170,7 @@ var Store = React.createClass({
 					</div>
 
 		        	<div className="store-articules-wraper">
-			        	<p className="store-results-and-filter-title-p">Results <span className="store-results-and-filter-title-p">fdf</span></p>
+			        	<p className="store-results-and-filter-title-p">Results</p>
 			        	<List data={this.props.data}/>
 			        </div>
 			        </div>
@@ -272,6 +303,64 @@ $(".store-watch-object").hide();
 });
 
 
+	
+
+
+sd(1);
+sd(2);
+sd(3);
+sd(4);
+sd(5);
+sd(6);
+sd(7);
+sd(8);
+sd(9);
+sd(10);
+sd(11);
+sd(12);
+
+$(".store-watch-modal-wraper").hide();
+
+function sd(num) {
+	
+	$("#watch"+ num).click(function () {
+		var  cenaPredi, cenaSega, promenenProcent, shipingIf;
+		promenenProcent = 100 - data2[num-1].off;
+		cenaSega=data2[num-1].price;
+		cenaPredi = ((cenaSega*100)/promenenProcent).toFixed(0);
+		shipingIf = (data2[num-1].shiping == "Free")? "Free" : "$"+data2[num-1].shiping;
+		console.log(cenaPredi +" "+ cenaSega + " " + data2[num-1].off);
+		$("#span-name").text(data2[num-1].name);
+	    $("#span-model").text(data2[num-1].model);
+	    $("#span-price").text("$"+cenaSega);
+	    $("#span-off").text(data2[num-1].off+"% off");
+	    $("#span-ori-price").text("$"+cenaPredi);
+	    $("#span-shipping").text(shipingIf);
+	    $("#span-avalible").text(data2[num-1].availability);
+	    $(".modal-img").attr("src", data2[num-1].img); 
+	    if(data2[num-1].availability=="YES"){
+	    	$(".avaliblility-p span").css('color','green');
+	    }else{
+	    	$(".avaliblility-p span").css('color','red');
+	    }
+
+	});
+}
+
+
+
+
+$(".store-watch-object").click(function () {
+	$(".store-watch-modal-wraper").show();
+	$(".store-watch-modal-wraper").addClass("store-watch-modal-wraper-is-visible");
+$(".store-watch-modal").addClass("store-watch-modal-is-visible");
+});
+
+$(".modal-close-btn").click(function () {
+	
+	$(".store-watch-modal-wraper").removeClass("store-watch-modal-wraper-is-visible");
+$(".store-watch-modal").removeClass("store-watch-modal-is-visible");
+});
 
 
 
@@ -281,6 +370,7 @@ $(".store-watch-object").hide();
 });
 
 var data2 =[
+   
    {
       key:'1',
       id:'watch1',
@@ -290,7 +380,10 @@ var data2 =[
       price:'455',
       off:'23',
       gender:'class_man',
-      color:'class_white'
+      color:'class_white',
+      articule_number:'1342123589',
+      shiping:'Free',
+      availability:'YES'
 
    },
    {
@@ -302,7 +395,11 @@ var data2 =[
       price:'388',
       off:'43',
       gender:'class_man',
-      color:'class_brown'
+      color:'class_brown',
+      articule_number:'856235894',
+      shiping:'Free',
+      availability:'YES'
+
    },
    {
       key:'3',
@@ -313,7 +410,11 @@ var data2 =[
       price:'445',
       off:'35',
       gender:'class_woman',
-      color:'class_black'
+      color:'class_black',
+      articule_number:'7568785963',
+      shiping:'Free',
+      availability:'YES'
+
    },
    {
       key:'4',
@@ -324,7 +425,11 @@ var data2 =[
       price:'677',
       off:'35',
       gender:'class_man',
-      color:'class_brown'
+      color:'class_brown',
+      articule_number:'475642296',
+      shiping:'140',
+      availability:'NO'
+
    },
    {
       key:'5',
@@ -335,7 +440,11 @@ var data2 =[
       price:'242',
       off:'23',
       gender:'class_man',
-      color:'class_brown'
+      color:'class_brown',
+      articule_number:'52346342',
+      shiping:'Free',
+      availability:'YES'
+
    },
    {
       key:'6',
@@ -346,7 +455,11 @@ var data2 =[
       price:'453',
       off:'56',
       gender:'class_woman',
-      color:'class_brown'
+      color:'class_brown',
+      articule_number:'5326526',
+      shiping:'Free',
+      availability:'NO'
+
    },
    {
       key:'7',
@@ -357,106 +470,146 @@ var data2 =[
       price:'242',
       off:'23',
       gender:'class_man',
-      color:'class_brown'
+      color:'class_brown',
+      articule_number:'64373476324',
+      shiping:'122',
+      availability:'YES'
+
    },
    {
       key:'8',
-      id:'watch',
+      id:'watch8',
       name:'Psjdh',
       model:'fasfhaskjfahkjsf',
       img:'assets/watch.png',
       price:'738',
       off:'29',
       gender:'class_woman',
-      color:'class_red'
+      color:'class_red',
+      articule_number:'43563453',
+      shiping:'Free',
+      availability:'NO'
+
    },
    {
       key:'9',
-      id:'watch',
+      id:'watch9',
       name:'hhhdsjk',
       model:'ffjashfkja ',
       img:'assets/watch.png',
       price:'878',
       off:'23',
       gender:'class_man',
-      color:'class_blue'
+      color:'class_blue',
+      articule_number:'7587422',
+      shiping:'123',
+      availability:'YES'
+
    },
    {
       key:'10',
-      id:'watch',
+      id:'watch10',
       name:'eyeyey',
       model:'wuqifffasdfa',
       img:'assets/watch.png',
       price:'231',
       off:'22',
       gender:'class_woman',
-      color:'class_yellow'
+      color:'class_yellow',
+      articule_number:'6436673',
+      shiping:'Free',
+      availability:'YES'
+
    },
    {
       key:'11',
-      id:'watch',
+      id:'watch11',
       name:'rewrwe',
       model:'fdsgfsdgsdgsdg ',
       img:'assets/watch.png',
       price:'554',
       off:'12',
       gender:'class_man',
-      color:'class_yellow'
+      color:'class_yellow',
+      articule_number:'7774343',
+      shiping:'144',
+      availability:'YES'
+
    },
    {
       key:'12',
-      id:'watch',
+      id:'watch12',
       name:'fsdfgsdg',
       model:' qwrqwrqwrqwr',
       img:'assets/watch.png',
       price:'644',
       off:'32',
       gender:'class_man',
-      color:'class_green'
+      color:'class_green',
+      articule_number:'7573334',
+      shiping:'Free',
+      availability:'NO'
+
    },
    {
       key:'13',
-      id:'watch',
+      id:'watch13',
       name:'fggweg',
       model:'rwqrqwrqwrqwrqwr ',
       img:'assets/watch.png',
       price:'664',
       off:'44',
       gender:'class_woman',
-      color:'class_blue'
+      color:'class_blue',
+      articule_number:'735783483',
+      shiping:'155',
+      availability:'YES'
+
    },
    {
       key:'14',
-      id:'watch',
+      id:'watch14',
       name:'sdgsdha',
       model:'wqwrqwrqwrq ',
       img:'assets/watch.png',
       price:'425',
       off:'11',
       gender:'class_man',
-      color:'class_red'
+      color:'class_red',
+      articule_number:'626237627',
+      shiping:'Free',
+      availability:'YES'
+
    },
    {
       key:'15',
-      id:'watch',
+      id:'watch15',
       name:'giuhaf',
       model:' qwreqwrq',
       img:'assets/watch.png',
       price:'117',
       off:'33',
       gender:'class_man',
-      color:'class_purple'
+      color:'class_purple',
+      articule_number:'54754235623',
+      shiping:'Free',
+      availability:'YES'
+
    },
    {
       key:'16',
-      id:'watch',
+      id:'watch16',
       name:'gfwegwegw',
       model:'qwrqgwdgvsgs ',
       img:'assets/watch.png',
       price:'545',
       off:'12',
       gender:'class_woman',
-      color:'class_purple'
+      color:'class_purple',
+      articule_number:'346737378',
+      shiping:'Free',
+      availability:'NO'
+
    }
 
 
