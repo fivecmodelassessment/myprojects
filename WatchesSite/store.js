@@ -26,6 +26,22 @@ render : function() {
 
 */
 
+var ShopingCar= React.createClass({
+	render:function () {
+		return(
+			<div className="cart-main-div-father">
+				<div className="cart-block-div">
+					<img src="assets/shoping-cart.png" className="cart-img"/>
+				</div>
+				<div className="cart-block-div">
+					<p className="cart-items-count" id="cart-item-count">0</p>
+					<p className="cart-items-price" id="cart-items-price-sum">0$</p>
+				</div>
+			</div>
+			)
+	}
+});
+
 var Clicker = React.createClass({
 
 
@@ -46,6 +62,7 @@ var Modal4Watch = React.createClass({
 
 				<div className='store-watch-modal'>
 					<strong className="modal-close-btn" >&#10060;</strong>
+					<div className="modal-arrow-left"><img src="assets/left-arrow-before.png" id="left-arrow-modal"/></div>
 					<div className="modal-img-wraper"><img className="modal-img" src={data2[0].img}/></div>
 					<div className="modal-data-wraper">
 						<p className="modal-watch-name"><strong id="span-name">{data2[0].name}</strong></p>
@@ -57,8 +74,14 @@ var Modal4Watch = React.createClass({
 						<p className="modal-original-price shiping-price">Shiping price:  <span id="span-shipping"></span></p>
 						<p className="modal-original-price avaliblility-p">In stock:  <span id="span-avalible"></span></p>
 						<button id="buy-now-btn" className="modal-buy-btn">BUY NOW</button>
+						<button id="to-cart-btn" className="modal-buy-btn">TO CART</button>
+						<div className="modal-switchers-arrow">
+							
+							
+						</div>
 						
 					</div>
+					<div className="modal-arrow-right"><img src="assets/right-arrow-before.png"id="right-arrow-modal"/></div>
 				</div>
 			</div>
 			)
@@ -162,6 +185,7 @@ var Store = React.createClass({
 				return (
 
 		       		<div className="store-app-all-wraper">
+		       		<ShopingCar/>
 		       		<Modal4Watch modalData={this.props.data}/>
 					<div className="store-filters-wraper">
 						<p className="store-results-and-filter-title-p">Filters</p>
@@ -183,7 +207,7 @@ var Store = React.createClass({
 $(document).ready(function () {
 	$("#manButton,#womanButton,#brightButton,#darkButton").hide();
 
-
+var counterClick ;
 
 	var comma1="",comma2="",comma3="",comma4="",comma5="",ClMa="",ClWo="",ClBr="", ClBl="", ClWh="", ClRd="";
 
@@ -306,30 +330,32 @@ $(".store-watch-object").hide();
 	
 
 
-sd(1);
-sd(2);
-sd(3);
-sd(4);
-sd(5);
-sd(6);
-sd(7);
-sd(8);
-sd(9);
-sd(10);
-sd(11);
-sd(12);
+Modal_apearing(1);
+Modal_apearing(2);
+Modal_apearing(3);
+Modal_apearing(4);
+Modal_apearing(5);
+Modal_apearing(6);
+Modal_apearing(7);
+Modal_apearing(8);
+Modal_apearing(9);
+Modal_apearing(10);
+Modal_apearing(11);
+Modal_apearing(12);
 
 $(".store-watch-modal-wraper").hide();
 
-function sd(num) {
+function Modal_apearing(num) {
 	
 	$("#watch"+ num).click(function () {
+		counterClick = num;
+		console.log(counterClick);
 		var  cenaPredi, cenaSega, promenenProcent, shipingIf;
 		promenenProcent = 100 - data2[num-1].off;
 		cenaSega=data2[num-1].price;
 		cenaPredi = ((cenaSega*100)/promenenProcent).toFixed(0);
 		shipingIf = (data2[num-1].shiping == "Free")? "Free" : "$"+data2[num-1].shiping;
-		console.log(cenaPredi +" "+ cenaSega + " " + data2[num-1].off);
+		
 		$("#span-name").text(data2[num-1].name);
 	    $("#span-model").text(data2[num-1].model);
 	    $("#span-price").text("$"+cenaSega);
@@ -338,6 +364,7 @@ function sd(num) {
 	    $("#span-shipping").text(shipingIf);
 	    $("#span-avalible").text(data2[num-1].availability);
 	    $(".modal-img").attr("src", data2[num-1].img); 
+	    $("#span-ar_num").text(data2[num-1].articule_number);
 	    if(data2[num-1].availability=="YES"){
 	    	$(".avaliblility-p span").css('color','green');
 	    }else{
@@ -345,8 +372,9 @@ function sd(num) {
 	    }
 
 	});
-}
 
+
+}
 
 
 
@@ -357,7 +385,7 @@ $(".store-watch-modal").addClass("store-watch-modal-is-visible");
 });
 
 $(".modal-close-btn").click(function () {
-	
+	counterClick = 0;	console.log(counterClick);
 	$(".store-watch-modal-wraper").removeClass("store-watch-modal-wraper-is-visible");
 $(".store-watch-modal").removeClass("store-watch-modal-is-visible");
 });
@@ -365,10 +393,157 @@ $(".store-watch-modal").removeClass("store-watch-modal-is-visible");
 
 
 
-
-// end of doc.ready()		
+$("#left-arrow-modal").hover(function() {
+	
+	$(this).attr('src', 'assets/left-arrow.png');
+}, function() {
+	
+	$(this).attr('src', 'assets/left-arrow-before.png');
 });
 
+
+$("#right-arrow-modal").hover(function() {
+	$(this).attr('src', 'assets/right-arrow.png');
+}, function() {
+	$(this).attr('src', 'assets/right-arrow-before.png');
+});
+
+
+
+
+
+
+
+function nextWatch(counter) {
+	
+		var  cenaPredi, cenaSega, promenenProcent, shipingIf;
+		promenenProcent = 100 - data2[counter-1].off;
+		cenaSega=data2[counter-1].price;
+		cenaPredi = ((cenaSega*100)/promenenProcent).toFixed(0);
+		shipingIf = (data2[counter-1].shiping == "Free")? "Free" : "$"+data2[counter-1].shiping;
+		
+		$("#span-name").text(data2[counter-1].name);
+	    $("#span-model").text(data2[counter-1].model);
+	    $("#span-price").text("$"+cenaSega);
+	    $("#span-off").text(data2[counter-1].off+"% off");
+	    $("#span-ori-price").text("$"+cenaPredi);
+	    $("#span-shipping").text(shipingIf);
+	    $("#span-avalible").text(data2[counter-1].availability);
+	    $(".modal-img").attr("src", data2[counter-1].img);
+	    $("#span-ar_num").text(data2[counter-1].articule_number); 
+	    if(data2[counter-1].availability=="YES"){
+	    	$(".avaliblility-p span").css('color','green');
+	    }else{
+	    	$(".avaliblility-p span").css('color','red');
+	    }
+}
+
+
+
+
+
+
+$("#right-arrow-modal").click(function() {
+counterClick++;
+console.log(counterClick);
+	if (counterClick == 16) {
+		counterClick = 1;
+	}else nextWatch(counterClick);
+});
+
+
+$("#left-arrow-modal").click(function() {
+counterClick--;
+console.log(counterClick);
+	if(counterClick == 0){
+		counterClick += data2.length - 1;
+	}else nextWatch(counterClick);
+	 
+
+
+
+});
+$(window).scroll(function  () {
+	
+		var  wScroll = $(this).scrollTop();
+		
+			
+
+	
+					
+	//end of 	$(window).scroll(
+});
+var ActiculesInCart = new Array;
+var ActiculesInCartPrice = new Array;
+var AddCartClicker = 0;
+
+$("#to-cart-btn").click(function () {
+	
+	AddCartClicker++;
+
+	var _priceWith = $("#span-price").text();
+	var _price = _priceWith.substring(1, 8);
+
+	var cartPrice = parseInt(_price);
+	
+	for (var i = 0; i < ActiculesInCartPrice.length; i++) {
+	    cartPrice += ActiculesInCartPrice[i] << 0;
+	}
+		ActiculesInCart.push($("#span-ar_num").text());
+		ActiculesInCartPrice.push(parseInt(_price));
+
+	$("#cart-item-count").text(ActiculesInCart.length);
+	$("#cart-items-price-sum").text(cartPrice+"$");
+		$("#cart-item-count").fadeOut(50).delay( 100 ).fadeIn( 200 );
+		$("#cart-items-price-sum").fadeOut(50).delay( 100 ).fadeIn( 200 );
+		$(".cart-img").animate({'left':(-10)+'px'},50)
+		.animate({'left':(+10)+'px'},50)
+		.animate({'left':(-10)+'px'},50)
+		.animate({'left':(+20)+'px'},50);
+		
+    
+    
+
+		console.log(ActiculesInCart);
+		console.log($("#span-ar_num").text());
+		console.log(ActiculesInCartPrice);
+		console.log(_price);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end of doc.ready()
+});
 var data2 =[
    
    {
