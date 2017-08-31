@@ -24,12 +24,6 @@ $(".fore-watch").css({
 	});
 
 
-if (wScroll > $(".back-watch").offset().top ) {
-
-$("h1").addClass('is-visible-h1');
-
-
-}
 
 
 

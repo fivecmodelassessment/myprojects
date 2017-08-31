@@ -26,6 +26,47 @@ render : function() {
 
 */
 
+var ShopingCarWindow= React.createClass({
+	render:function () {
+		return(
+			<div className='cart-window-wraper'>
+				<div className="cart-window">
+				<strong className="cart-close-btn" >&#10060;</strong>
+				<p className="store-results-and-filter-title-p">Cart</p>
+				<div className="cart-div-over-table">
+					<table className="cart-table">
+						<tbody id="cart-table-body">
+							<tr className="cart-table-head">
+							    <th>Image</th>
+							    <th>Model</th>
+							    <th>Price</th>
+							    <th>Off</th>
+							    <th>Quantity</th>
+							    <th>All Price</th>
+							    <th>Item ID</th>
+							    <th>Remove</th>
+						  	</tr>
+						  	
+					  </tbody>
+					</table>
+					</div>
+					<div className="cart-total-and-btn"><button id="buy-now-btn-cart" className="modal-buy-btn-cart">BUY</button>
+						<p className="cart-total-price">Total price: &nbsp;&nbsp;  $<span>0</span></p>
+						
+				</div>
+				</div>
+				</div>
+			)
+	}
+});
+
+
+
+
+
+
+
+
 var ShopingCar= React.createClass({
 	render:function () {
 		return(
@@ -75,6 +116,7 @@ var Modal4Watch = React.createClass({
 						<p className="modal-original-price avaliblility-p">In stock:  <span id="span-avalible"></span></p>
 						<button id="buy-now-btn" className="modal-buy-btn">BUY NOW</button>
 						<button id="to-cart-btn" className="modal-buy-btn">TO CART</button>
+						<p className="added-to-cart-popup">ADDED TO CART</p>
 						<div className="modal-switchers-arrow">
 							
 							
@@ -104,7 +146,7 @@ var List = React.createClass({
 					return(
 							<figure key={watch.key} onClick={this.clickEring} id={watch.id} className={"store-watch-object" + ' ' + watch.gender + ' ' + watch.color }><img src={watch.img} className="store-fiure-img "/>
 								    <figcaption className="store-title-figure"><strong>{watch.name}</strong> {watch.model}</figcaption>
-								    <figcaption className="store-price-figure">Price:<strong> {watch.price}$</strong><span> {watch.off}% OFF</span></figcaption>
+								    <figcaption className="store-price-figure">Price:<strong> {watch.price}</strong>$<span> {watch.off}% OFF</span></figcaption>
 							</figure>
 							
 							)
@@ -126,13 +168,9 @@ var Filters = React.createClass({
 		return(
 			<div>
 				<button onClick={this.SortMan} id="FilterButton" className="store-filter-apply-button">Apply</button>
-				<button onClick={this.SortMan} id="manButton" className="store-filter-apply-button">Man</button>
-				<button onClick={this.SortWoman} id="womanButton" className="store-filter-apply-button">Woman</button>
 				
-				<button onClick={this.SortMan} id="brightButton" className="store-filter-apply-button">Bright</button>
-				<button onClick={this.SortWoman} id="darkButton" className="store-filter-apply-button">Dark</button>
 					<div>
-						<p className="store-filters-section-title">Gender</p>
+						<p className="store-filters-section-title">By Gender</p>
 							<label className="store-filter-checkbox-label">
 								<input type="checkbox" id="man-checkbox" value="man" className="store-filter-checkbox"/>Man</label>
 							<label className="store-filter-checkbox-label">
@@ -140,7 +178,13 @@ var Filters = React.createClass({
 						
 					</div>
 					<div>
-						<p className="store-filters-section-title">Color</p>
+						<p className="store-filters-section-title">By Price($)</p><span id="clear-inputs" className="store-clear-inputs-price">Clear</span>
+						<label className="store-filter-checkbox-label">From:<input type="text" className="filters-price-input" id="filter_from_input"/></label>
+						<label className="store-filter-checkbox-label">To:<input type="text" className="filters-price-input" id="filter_to_input"/></label>
+					</div>
+
+					<div>
+						<p className="store-filters-section-title">By Color</p>
 						
 						<label className="store-filter-checkbox-label">
 							<input type="checkbox" id="white-checkbox" value="white" className="store-filter-checkbox"/>White</label>
@@ -160,11 +204,7 @@ var Filters = React.createClass({
 							<input type="checkbox" id="purple-checkbox" value="purple" className="store-filter-checkbox"/>Purple</label>
 
 					</div>
-					<div>
-						<p className="store-filters-section-title">Price</p>
-						<label className="store-filter-checkbox-label">From:<input type="text" className="filters-price-input" id="filter_from_input"/></label>
-						<label className="store-filter-checkbox-label">To:<input type="text" className="filters-price-input" id="filter_to_input"/></label>
-					</div>
+					
 
 			</div>
 			)
@@ -185,7 +225,9 @@ var Store = React.createClass({
 				return (
 
 		       		<div className="store-app-all-wraper">
+		       		<ShopingCarWindow/>
 		       		<ShopingCar/>
+		       		
 		       		<Modal4Watch modalData={this.props.data}/>
 					<div className="store-filters-wraper">
 						<p className="store-results-and-filter-title-p">Filters</p>
@@ -205,11 +247,11 @@ var Store = React.createClass({
 });
 
 $(document).ready(function () {
-	$("#manButton,#womanButton,#brightButton,#darkButton").hide();
+	
 
 var counterClick ;
 
-	var comma1="",comma2="",comma3="",comma4="",comma5="",ClMa="",ClWo="",ClBr="", ClBl="", ClWh="", ClRd="";
+	var ClMa="",ClWo="",ClBr="", ClBl="", ClWh="",ClRd="",ClYl="",ClBlu="",ClPr="",ClGr="";
 
 	$("#man-checkbox").click(function () {
 		if($(this).prop('checked')){
@@ -262,68 +304,173 @@ var counterClick ;
 			ClRd = "";
 		}	
 	});
+	$("#yellow-checkbox").click(function () {
+		if($(this).prop('checked')){
+			ClYl = ".class_yellow";
+		}
+		if(!$(this).prop('checked')){
+			ClYl = "";
+		}	
+	});
+	$("#green-checkbox").click(function () {
+		if($(this).prop('checked')){
+			ClGr = ".class_green";
+		}
+		if(!$(this).prop('checked')){
+			ClGr = "";
+		}	
+	});
+	$("#blue-checkbox").click(function () {
+		if($(this).prop('checked')){
+			ClBlu = ".class_blue";
+		}
+		if(!$(this).prop('checked')){
+			ClBlu = "";
+		}	
+	});
+	$("#purple-checkbox").click(function () {
+		if($(this).prop('checked')){
+			ClPr = ".class_purple";
+		}
+		if(!$(this).prop('checked')){
+			ClPr = "";
+		}	
+	});
+
+$("#filter_from_input").append('$');
+$("#filter_to_input").append('$');
+/*
+<tr className="cart-articule-row">
+							    <td><img src={data2[0].img} className="cart-articule-img"/></td>
+
+							    <td>{data2[0].name +" "+ data2[0].model}</td>
+							    <td>{data2[0].price}$</td>
+							    <td>{data2[0].off}%</td>
+							    <td>2</td>
+							    <td>893$</td>
+							    <td><button className="cart-remove-btn" id="">REMOVE</button></td>
+						  </tr> 						    
+						  <tr className="cart-articule-row">
+							    <td><img src={data2[2].img} className="cart-articule-img"/></td>
+							    <td>{data2[2].name +" "+ data2[2].model}</td>
+							    <td>{data2[2].price}$</td>
+							    <td>{data2[2].off}%</td>
+							    <td>2</td>
+							    <td>893$</td>
+							    <td><button className="cart-remove-btn" id="">REMOVE</button></td>
+						  </tr>
+						  <tr className="cart-articule-row">
+							    <td><img src={data2[2].img} className="cart-articule-img"/></td>
+							    <td>{data2[2].name +" "+ data2[2].model}</td>
+							    <td>{data2[2].price}$</td>
+							    <td>{data2[2].off}%</td>
+							    <td>2</td>
+							    <td>893$</td>
+							    <td><button className="cart-remove-btn" id="">REMOVE</button></td>
+						  </tr>
+*/
 
 
 
-
-	
+$("#clear-inputs").click(function () {
+	$("#filter_from_input").val("");
+	$("#filter_to_input").val("");
+});
+	var FROM, TO;
 $("#FilterButton").bind("click",function () {
-	
  
 
 
+ FROM = "0";
+ TO = "0";
 
-$(".store-watch-object").hide();
+ FROM = parseInt($("#filter_from_input").val());
+ TO = parseInt($("#filter_to_input").val());
+
+if($("#filter_from_input").val() == "" && $("#filter_to_input").val() == "" ){
+
+		$(".store-watch-object").hide();
 	
-	var Price_from, Price_to;
-	Price_from = $("#filter_from_input").val();
-	Price_to = $("#filter_to_input").val();
+						
 
-	for (var i = 0 ; i <= data2.length - 1; i++) {
-		if ( data2[i].price > Price_from && data2[i].price < Price_to ) {
-			console.log(data2[i].name + data2[i].model + data2[i].price + " " +Price_from +" "+ Price_to );
+						if ($("#woman-checkbox").prop('checked') && $("#man-checkbox").prop('checked') ) {
+							$(".store-watch-object").show();
+						}
+						if (!$("#woman-checkbox").prop('checked') && !$("#man-checkbox").prop('checked') ) {
+								
+								$(ClBr).show();
+								$(ClBl).show();
+								$(ClWh).show();
+								$(ClRd).show();
+								$(ClYl).show();
+								$(ClGr).show();
+								$(ClBlu).show();
+								$(ClPr).show();
 
-		}
-		
-	}
-	if ($("#woman-checkbox").prop('checked') && $("#man-checkbox").prop('checked') ) {
-		$(".store-watch-object").show();
-	}
-	if (!$("#woman-checkbox").prop('checked') && !$("#man-checkbox").prop('checked') ) {
-			
-			$(ClBr).show();
-			$(ClBl).show();
-			$(ClWh).show();
-			$(ClRd).show();
-
-	}
-	
-	
-	
-	
-	setTimeout(function () {
-		
-		
-		if (!$("#woman-checkbox").prop('checked') && 
-			!$("#man-checkbox").prop('checked') && 
-			!$("#white-checkbox").prop('checked') && 
-			!$("#black-checkbox").prop('checked')&& 
-			!$("#brown-checkbox").prop('checked') && 
-			!$("#red-checkbox").prop('checked') ) {
-			
-			$(".store-watch-object").show();
-		}
-
-
-		var RT = ClMa  + ClWo  + ClBr  + ClBl  + ClWh  + ClRd ;
-
-		$(RT).show();
-
-		console.log(RT);
+						}
+						
+						
+						
+						
+						setTimeout(function () {
+							
+							
+							if (!$("#woman-checkbox").prop('checked') && 
+								!$("#man-checkbox").prop('checked') && 
+								!$("#white-checkbox").prop('checked') && 
+								!$("#black-checkbox").prop('checked')&& 
+								!$("#brown-checkbox").prop('checked') && 
+								!$("#red-checkbox").prop('checked')  && 
+								!$("#yellow-checkbox").prop('checked')  && 
+								!$("#green-checkbox").prop('checked')  && 
+								!$("#blue-checkbox").prop('checked')  && 
+								!$("#purple-checkbox").prop('checked') ) {
+								
+								$(".store-watch-object").show();
+							}
 
 
-	},200);
+							var RT = ClMa  + ClWo  + ClBr  + ClBl  + ClWh  + ClRd + ClYl+ ClGr+ ClBlu + ClPr;
 
+							$(RT).show();
+
+							console.log(RT);
+
+
+						},200);
+}else if ($("#filter_from_input").val() !== "" && $("#filter_to_input").val() !== "" ) {
+
+
+$(".store-watch-object").show();
+					$(".store-articules-wraper div .store-watch-object").each(function(i) {
+								
+								
+								
+								
+								
+								
+								if($(".store-price-figure strong").eq(i).text() < FROM ){
+									$(".store-price-figure strong").eq(i).parent().parent().hide();
+								
+								}
+								if( $(".store-price-figure strong").eq(i).text()> TO   ){
+									$(".store-price-figure strong").eq(i).parent().parent().hide();
+								
+								}
+								
+
+								//console.log(i+"-"+ price );
+
+							//end of each()
+							});
+
+}
+
+
+
+
+
+//end of filter click()
 });
 
 
@@ -342,9 +489,15 @@ Modal_apearing(9);
 Modal_apearing(10);
 Modal_apearing(11);
 Modal_apearing(12);
+Modal_apearing(13);
+Modal_apearing(14);
+Modal_apearing(15);
+Modal_apearing(16);
+
+
 
 $(".store-watch-modal-wraper").hide();
-
+$(".cart-window-wraper").hide();
 function Modal_apearing(num) {
 	
 	$("#watch"+ num).click(function () {
@@ -445,93 +598,197 @@ function nextWatch(counter) {
 
 $("#right-arrow-modal").click(function() {
 counterClick++;
-console.log(counterClick);
-	if (counterClick == 16) {
-		counterClick = 1;
+
+	if (counterClick == data2.length ) {
+		counterClick -= data2.length ;
 	}else nextWatch(counterClick);
+	$(".added-to-cart-popup").removeClass('added-to-cart-popup-is-visible');
+	console.log(counterClick);
 });
 
 
 $("#left-arrow-modal").click(function() {
 counterClick--;
 console.log(counterClick);
-	if(counterClick == 0){
-		counterClick += data2.length - 1;
+	if(counterClick == ""){
+		counterClick += data2.length;
 	}else nextWatch(counterClick);
 	 
-
+$(".added-to-cart-popup").removeClass('added-to-cart-popup-is-visible');
 
 
 });
 $(window).scroll(function  () {
 	
 		var  wScroll = $(this).scrollTop();
-		
-			
-
+	
 	
 					
 	//end of 	$(window).scroll(
 });
+
+
+
+
+
+
 var ActiculesInCart = new Array;
 var ActiculesInCartPrice = new Array;
 var AddCartClicker = 0;
+var CunterForArticulsINCart = 0;
+
+
+
+
+
+
 
 $("#to-cart-btn").click(function () {
+			
+			CunterForArticulsINCart++;
+			AddCartClicker++;
+
+			var _priceWith = $("#span-price").text();
+			var _price = _priceWith.substring(1, 8);
+
+			var cartPrice = parseInt(_price);
+			
+			for (var i = 0; i < ActiculesInCartPrice.length; i++) {
+			    cartPrice += ActiculesInCartPrice[i] << 0;
+			}
+				ActiculesInCart.push(CunterForArticulsINCart);
+				ActiculesInCartPrice.push(parseInt(_price));
+
+			$("#cart-item-count").text(CunterForArticulsINCart);
+			$("#cart-items-price-sum").text(cartPrice).append('$');
+				$("#cart-item-count").fadeOut(50).delay( 100 ).fadeIn( 200 );
+				$("#cart-items-price-sum").fadeOut(50).delay( 100 ).fadeIn( 200 );
+				$(".cart-img").animate({'left':(-10)+'px'},50)
+				.animate({'left':(+10)+'px'},50)
+				.animate({'left':(-10)+'px'},50)
+				.animate({'left':(+20)+'px'},50);
+				
+		    
+		    
+
+				
+				console.log(ActiculesInCartPrice + "    " +CunterForArticulsINCart);
+				
+
+			var indexgg = data2.map(function(e) { 
+					return e.articule_number; 
+				}).indexOf($("#span-ar_num").text());
+
+			AddNewRowTOcart(indexgg);
+
+			$(".added-to-cart-popup").addClass('added-to-cart-popup-is-visible');
+
+
+
+			$(".cart-total-price span").text(cartPrice+"$");
+
+
+
+
+});
+
+
+//namirame indexa po articule_number koito sa v masiva ActiculesInCart
+
+
+
+
+$(".cart-close-btn").click(function () {
 	
-	AddCartClicker++;
+	$("#cart-items-price-sum").text($(".cart-total-price span").text()).append('$');
+	$("#cart-item-count").text(CunterForArticulsINCart);
+	ActiculesInCartPrice.length=0;
+	ActiculesInCartPrice.push(parseInt($("#cart-items-price-sum").text()));
+	$(".cart-window").removeClass('cart-window-is-visible');
+	$(".cart-window-wraper").removeClass("cart-window-wraper-is-visible");
 
-	var _priceWith = $("#span-price").text();
-	var _price = _priceWith.substring(1, 8);
 
-	var cartPrice = parseInt(_price);
-	
-	for (var i = 0; i < ActiculesInCartPrice.length; i++) {
-	    cartPrice += ActiculesInCartPrice[i] << 0;
-	}
-		ActiculesInCart.push($("#span-ar_num").text());
-		ActiculesInCartPrice.push(parseInt(_price));
+	console.log(ActiculesInCartPrice + "    " +CunterForArticulsINCart);
+});
+$(".cart-main-div-father").click(function () {
+	$(".cart-window-wraper").show();
+	$(".cart-window").addClass('cart-window-is-visible');
+	$(".cart-window-wraper").addClass("cart-window-wraper-is-visible");
+	$(".store-watch-modal-wraper").hide();
 
-	$("#cart-item-count").text(ActiculesInCart.length);
-	$("#cart-items-price-sum").text(cartPrice+"$");
-		$("#cart-item-count").fadeOut(50).delay( 100 ).fadeIn( 200 );
-		$("#cart-items-price-sum").fadeOut(50).delay( 100 ).fadeIn( 200 );
-		$(".cart-img").animate({'left':(-10)+'px'},50)
-		.animate({'left':(+10)+'px'},50)
-		.animate({'left':(-10)+'px'},50)
-		.animate({'left':(+20)+'px'},50);
-		
-    
-    
-
-		console.log(ActiculesInCart);
-		console.log($("#span-ar_num").text());
-		console.log(ActiculesInCartPrice);
-		console.log(_price);
 });
 
 
 
+/*
+$(".store-watch-object").click(function () {
+	$(".store-watch-modal-wraper").show();
+	$(".store-watch-modal-wraper").addClass("store-watch-modal-wraper-is-visible");
+$(".store-watch-modal").addClass("store-watch-modal-is-visible");
+});
+
+$(".modal-close-btn").click(function () {
+	counterClick = 0;	console.log(counterClick);
+	$(".store-watch-modal-wraper").removeClass("store-watch-modal-wraper-is-visible");
+$(".store-watch-modal").removeClass("store-watch-modal-is-visible");
+});
+*/
 
 
 
 
+function AddNewRowTOcart(indexOFF) {
+
+	$("#cart-table-body tr:last ").after(
+	
+	'<tr class="cart-articule-row"><td><img src="" class="cart-articule-img"/></td><td></td><td></td><td></td><td></td><td class="art-price-sibling"></td><td></td><td></td></tr>'
 
 
+	);
+
+	$("#cart-table-body tr:last td img").attr('src', data2[indexOFF].img);
+	$("#cart-table-body tr:last td:nth-child(2)").text(data2[indexOFF].name +" "+ data2[indexOFF].model);
+	$("#cart-table-body tr:last td:nth-child(3)").text(data2[indexOFF].price).append('$');
+	$("#cart-table-body tr:last td:nth-child(4)").text(data2[indexOFF].off+"%");
+	$("#cart-table-body tr:last td:nth-child(5)").text("1");
+	$("#cart-table-body tr:last td:nth-child(6)").text(data2[indexOFF].price * $("#cart-table-body tr:last td:nth-child(5)").text()).append('$');
+	$("#cart-table-body tr:last td:nth-child(8)").html("<input id='button-remove-art-"+data2[indexOFF].key+"' type='button' class='cart-remove-btn' value='REMOVE'/>");
+	$("#cart-table-body tr:last td:nth-child(7)").text(data2[indexOFF].articule_number);
+
+}
 
 
+/*
+$("#buy-now-btn-cart").click(function () {
+	
+	
+});
+*/
+
+$(document).delegate(".cart-remove-btn", 'click', function(){
 
 
+CunterForArticulsINCart--;
 
+	
+		
+	 $(this).parent().parent().hide();
 
+	var TotalNow = parseInt($(".cart-total-price span").text());
+	var toRemve = parseInt($(this).closest("td").siblings(".art-price-sibling").text());
 
+	$(".cart-total-price span").text( TotalNow - toRemve  );
+		
+	
+var indexER = ActiculesInCartPrice.indexOf( $(this).closest("td").siblings(".art-price-sibling").text() );
+ActiculesInCartPrice.splice(indexER, 1);
+	
 
+console.log(ActiculesInCartPrice + "    " +  $(this).closest("td").siblings(".art-price-sibling").text() +" "+indexER);
+});
 
-
-
-
-
-
+	
+	
 
 
 
@@ -556,7 +813,7 @@ var data2 =[
       off:'23',
       gender:'class_man',
       color:'class_white',
-      articule_number:'1342123589',
+      articule_number:'13423589',
       shiping:'Free',
       availability:'YES'
 
@@ -571,7 +828,7 @@ var data2 =[
       off:'43',
       gender:'class_man',
       color:'class_brown',
-      articule_number:'856235894',
+      articule_number:'85635894',
       shiping:'Free',
       availability:'YES'
 
@@ -582,11 +839,11 @@ var data2 =[
       name:'Arowatch',
       model:' Ivory Leather Man Watch ',
       img:'assets/watch3.png',
-      price:'445',
+      price:'440',
       off:'35',
       gender:'class_woman',
       color:'class_black',
-      articule_number:'7568785963',
+      articule_number:'75685963',
       shiping:'Free',
       availability:'YES'
 
@@ -601,7 +858,7 @@ var data2 =[
       off:'35',
       gender:'class_man',
       color:'class_brown',
-      articule_number:'475642296',
+      articule_number:'47564296',
       shiping:'140',
       availability:'NO'
 
@@ -646,7 +903,7 @@ var data2 =[
       off:'23',
       gender:'class_man',
       color:'class_brown',
-      articule_number:'64373476324',
+      articule_number:'64376324',
       shiping:'122',
       availability:'YES'
 
@@ -654,9 +911,9 @@ var data2 =[
    {
       key:'8',
       id:'watch8',
-      name:'Psjdh',
-      model:'fasfhaskjfahkjsf',
-      img:'assets/watch.png',
+      name:'Tissot',
+      model:'Chemin Des Tourelles Dial Automatic Ladies Watch',
+      img:'assets/watch9.png',
       price:'738',
       off:'29',
       gender:'class_woman',
@@ -669,9 +926,9 @@ var data2 =[
    {
       key:'9',
       id:'watch9',
-      name:'hhhdsjk',
-      model:'ffjashfkja ',
-      img:'assets/watch.png',
+      name:'Frederique Constant',
+      model:'Horological Smartwatch Mens Watch ',
+      img:'assets/watch7.png',
       price:'878',
       off:'23',
       gender:'class_man',
@@ -684,10 +941,10 @@ var data2 =[
    {
       key:'10',
       id:'watch10',
-      name:'eyeyey',
-      model:'wuqifffasdfa',
-      img:'assets/watch.png',
-      price:'231',
+      name:'Rolex',
+      model:'Submariner Gold Oyster Bracelet Automatic Mens Watch',
+      img:'assets/watch11.png',
+      price:'23100',
       off:'22',
       gender:'class_woman',
       color:'class_yellow',
@@ -699,9 +956,9 @@ var data2 =[
    {
       key:'11',
       id:'watch11',
-      name:'rewrwe',
-      model:'fdsgfsdgsdgsdg ',
-      img:'assets/watch.png',
+      name:'Movado',
+      model:'Bold Champagne Dial Yellow Gold Stainless Steel Watch',
+      img:'assets/watch12.png',
       price:'554',
       off:'12',
       gender:'class_man',
@@ -714,9 +971,9 @@ var data2 =[
    {
       key:'12',
       id:'watch12',
-      name:'fsdfgsdg',
-      model:' qwrqwrqwrqwr',
-      img:'assets/watch.png',
+      name:'Seiko',
+      model:'Recraft Automatic Mens Watch',
+      img:'assets/watch13.png',
       price:'644',
       off:'32',
       gender:'class_man',
@@ -729,14 +986,14 @@ var data2 =[
    {
       key:'13',
       id:'watch13',
-      name:'fggweg',
-      model:'rwqrqwrqwrqwrqwr ',
-      img:'assets/watch.png',
+      name:'IWC ',
+      model:'Portuguese Chronograph Automatic Dial Mens Watch ',
+      img:'assets/watch8.png',
       price:'664',
       off:'44',
       gender:'class_woman',
       color:'class_blue',
-      articule_number:'735783483',
+      articule_number:'7357483',
       shiping:'155',
       availability:'YES'
 
@@ -744,14 +1001,14 @@ var data2 =[
    {
       key:'14',
       id:'watch14',
-      name:'sdgsdha',
-      model:'wqwrqwrqwrq ',
-      img:'assets/watch.png',
+      name:'Fossil',
+      model:'Jacqueline Wine Dial Ladies Watch',
+      img:'assets/watch10.png',
       price:'425',
       off:'11',
       gender:'class_man',
       color:'class_red',
-      articule_number:'626237627',
+      articule_number:'62627627',
       shiping:'Free',
       availability:'YES'
 
@@ -759,14 +1016,14 @@ var data2 =[
    {
       key:'15',
       id:'watch15',
-      name:'giuhaf',
-      model:' qwreqwrq',
-      img:'assets/watch.png',
+      name:'Baume et Mercier',
+      model:'Classima White Dial Purple Leather Ladies',
+      img:'assets/watch14.png',
       price:'117',
       off:'33',
       gender:'class_man',
       color:'class_purple',
-      articule_number:'54754235623',
+      articule_number:'54754623',
       shiping:'Free',
       availability:'YES'
 
@@ -774,14 +1031,14 @@ var data2 =[
    {
       key:'16',
       id:'watch16',
-      name:'gfwegwegw',
-      model:'qwrqgwdgvsgs ',
-      img:'assets/watch.png',
+      name:'Versace',
+      model:'V-Helix Ivory Dial Leather Ladies Watch',
+      img:'assets/watch15.png',
       price:'545',
       off:'12',
       gender:'class_woman',
       color:'class_purple',
-      articule_number:'346737378',
+      articule_number:'34673378',
       shiping:'Free',
       availability:'NO'
 
