@@ -1,4 +1,4 @@
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     body {
         background-color: #fff;
         padding: 0;
@@ -169,7 +169,7 @@
         box-shadow: 0px 0px 10px #000000;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .Main1c {
         background-image: -ms-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
         background-image: -moz-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
@@ -238,7 +238,7 @@
         width: 80%;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .Input-Data,
     .Output-Data {
         padding-right: 0%;
@@ -317,7 +317,7 @@
         opacity: 0.7;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .i1,
     .i2,
     .i3,
@@ -379,7 +379,7 @@
         font-size: 24px;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .sel {
         border: solid black 1px;
         width: 140px;
@@ -442,7 +442,7 @@
         margin-top: -10px;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .text1,
     .text2,
     .text3,
@@ -499,7 +499,7 @@
         margin-top: -10px;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .span1 {
         font-size: 17px;
         font-family: tahoma;
@@ -584,7 +584,7 @@
         text-shadow: 0px 1px 0px #2f6627;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .button2 {
         background-color: #7cb7ab;
         -webkit-border-radius: 10px;
@@ -673,7 +673,7 @@
         -webkit-border-radius: 3px;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .switchMoney,
     .switchLiter {
         background-image: -ms-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
@@ -723,7 +723,7 @@
         top: 2px;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .deepShadowForButtonSwitch {
         top: 3px;
     }
@@ -800,7 +800,7 @@
         box-shadow: 0px 0px 10px #000000;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .Main11 {
         background-image: -ms-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
         background-image: -moz-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
@@ -891,7 +891,7 @@
         box-shadow: 0px 0px 10px #000000;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .Main12 {
         background-image: -ms-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
         background-image: -moz-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
@@ -986,7 +986,7 @@
         outline: none !important;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .button21 {
         background-color: #7cb7ab;
         -webkit-border-radius: 10px;
@@ -1081,7 +1081,7 @@
         outline: none !important;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .button22 {
         background-color: #7cb7ab;
         -webkit-border-radius: 10px;
@@ -1172,7 +1172,7 @@
         box-shadow: 0px 0px 10px #000000;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .Main1c4 {
         background-image: -ms-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
         background-image: -moz-linear-gradient(bottom, #2F4F4F 0%, #2F2727 100%);
@@ -1256,7 +1256,7 @@
         border-top: 2px solid black;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     footer {
         width: 100%;
         display: inline-block;
@@ -1296,7 +1296,7 @@
         left: 5px;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     footer .copy {
         display: inline-block;
         position: relative;
@@ -1335,7 +1335,7 @@
         position: relative;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     footer .phone {
         display: inline-block;
         float: right;
@@ -1383,7 +1383,7 @@
         color: #fff;
     }
 }
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 480px) {
     .copy,
     .phone {
         float: left;
@@ -1391,5 +1391,15 @@
         font-family: tahoma;
         top: -20px;
         color: #fff;
+
     }
+.car-app-title{
+           position: relative;
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-top: 0px;
+    padding-top: 15px;
+}
 }

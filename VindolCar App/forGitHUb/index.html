@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vindol.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <title>Car Variables</title>
+
+</head>
+
+<body>
+
+
+
+    <!--logo -->
+    <div class="header">
+        <div class="logos1">
+            <p class="car-app-title">Car Variables</p>
+        </div>
+    </div>
+
+
+
+    <!--menu -->
+    <div class="navbardiv">
+        <ul class="navbarul">
+
+            <li>
+                <a class="Acena"><img class="NAVPIC" src="img/money.png"><span>Цена</span> </a>
+            </li>
+
+            <li>
+                <a class="Adis"><img class="NAVPIC" src="img/distance.png"><span>Разстояние</span> </a>
+            </li>
+
+            <li>
+                <a class="Araz"><img class="NAVPIC" src="img/oilicon.png"><span>Разход</span> </a>
+            </li>
+
+            <li>
+                <a class="Amom"><img class="NAVPIC" src="img/fuelcons.png"><span> Моментен</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+
+
+    <!-- pages-->
+    <!--     -->
+    <div class="ConteinerAll">
+
+
+        <!--stranica za pari-->
+
+        <div class="MoneyPage1 " data-role="page">
+
+
+            <div class="Main1c">
+
+                <form name="form1" class="Main1">
+                    <br>
+                    <div class="MainTitleOfpage">Цена на пътуване</div>
+                    <div class="Input-Data">
+                        <div class="text1">Разстояние:</div>
+                        <input data-role="none" class=i1 name="rastoqnie_1" id="dis" type="number" placeholder="Пр: 200" title="Въведете желано от вас разстояние" required="true"><span class="span1"> км.</samp>
+               <br>
+               <br>
+               <div class="text2">Разход:</div>
+               <input data-role="none" class=i2 name="razhod_1" id="harch" type="number" placeholder="Пр: 6.5" title="Разхода на колата ви"><span class="span1"> Литра/100км.</samp>
+               <br>
+               <br>
+               <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
+               
+               <input type="number" placeholder="Пр: 1.97" name="cena_gorivo_1" class=i2 data-role="none"><span class="span1"> Лв.</samp>
+                  
+               <br>
+               <br>
+            </div>
+            
+
+            <div class="Output-Data">
+                
+                <input data-role="none" class="button2" type="button" value="Изчисли" onclick="zar()" >
+                <br>
+               <br>
+               <div class="text4" >Зареждане:</div>
+               
+               <input data-role="none" class=i4 name="zarejdane_pari_1" type="number" id="gold" readonly> <span class="span1">лв.</samp>
+               <br>
+               <br>
+               <div class="text5" >Количество:</div>
+               
+               <input data-role="none" class=i8 name="zarejdane_litri_1" id="kol" type="number"  readonly> <span class="span1">литра.</samp>
+               
+               
+              
+            
+            </div>
+         
+
+
+
+         </form>
+      </div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--stranica za distanciq-->
+    <div class="DistancePage2" data-role="page">
+
+<div class="butoniSwitch">
+<input type="button" data-role="none" class="switchMoney" value="В ПАРИ">
+<input type="button" data-role="none" class="switchLiter" value="В ЛИТРИ"></div>
+
+
+
+
+
+
+
+
+
+
+    <div class="Main11" >
+         
+      <form name="form11" class="Main1"><br>
+           <div class="MainTitleOfpage">Разстояние с пари</div>
+        <div class="Input-Data">
+          
+           <div class="text4" >Зареждане:</div>
+               <input data-role="none" class=i1 name="zarejdane_2_1" id="zarN" type="number" placeholder="Пр: 20" > <span class="span1">лева.</span>
+                        <br>
+                        <br>
+
+                        <div class="text2">Разход:</div>
+                        <input data-role="none" class=i3 name="razhod_2_1" id="razhN" type="number" title="Разхода на колата ви" placeholder="Пр: 6.5"><span class="span1"> Лит/100 км.</span>
+
+
+
+                    </div>
+
+
+                    <div class="Output-Data">
+
+
+                        <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
+
+
+
+                        <input type="number" placeholder="Пр: 1.97" data-role="none" name="cenagorivo_2_1" class=i3><span class="span1"> Лв.</samp>
+               
+                
+                <br>
+               <br>
+               
+                <input data-role="none" class="button21" type="button" value="Изчисли" onclick="cal21()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+             <br>
+             <br>
+                
+
+
+        
+<div class="text1">Разстояние:</div>
+            <input data-role="none" class=i2 name="raztoqnie_2_1" id="razN" type="number"   title="Въведете желано от вас разстояние" readonly><span class="span1"> км.</span>
+
+
+                        <br>
+                        <br>
+                    </div>
+
+
+
+
+
+                </form>
+
+            </div>
+
+            <div class="Main12">
+
+                <form name="form12" class="Main1">
+                    <br>
+                    <div class="MainTitleOfpage">Разстояние с литри</div>
+                    <div class="Input-Data">
+
+                        <div class="text5">Количество:</div>
+
+                        <input data-role="none" class=i4 name="litri_2_2" id="litN" type="number" placeholder="Пр: 10"> <span class="span1">литра.</span>
+                        <br>
+                        <br>
+                        <div class="text2">Разход:</div>
+                        <input data-role="none" class=i6 name="razhod_2_2" id="razhN2" type="number" title="Разхода на колата ви" placeholder="Пр: 6.5"><span class="span1"> Лит/100 км.</span>
+
+
+
+
+                    </div>
+
+
+                    <div class="Output-Data">
+
+
+                        <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
+
+
+
+                        <input type="number" placeholder="Пр: 1.97" data-role="none" name="cenagorivo_2_2" class=i3><span class="span1"> Лв.</samp>
+                
+                <br>
+               <br>
+               
+                <input data-role="none" class="button22" type="button" value="Изчисли" onclick="cal22()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+             <br>
+             <br>
+                
+
+
+        
+<div class="text1">Разстояние:</div>
+            <input data-role="none" class=i5 name="raztoqnie_2_2" id="razN2" type="number"   title="Въведете желано от вас разстояние"  readonly><span class="span1"> км.</span>
+
+
+                        <br>
+                        <br>
+
+
+
+
+
+                    </div>
+
+
+
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+
+        <!--stranica za razhod-->
+        <div class="ConsumptionPage3" data-role="page">
+            <div class="butoniSwitch">
+                <input type="button" class="switchMoney" value="В ПАРИ">
+                <input type="button" class="switchLiter" value="В ЛИТРИ">
+            </div>
+
+
+
+
+
+            <div class="Main11">
+
+                <form name="form31" class="Main1">
+                    <br>
+                    <div class="MainTitleOfpage">Разход с пари</div>
+                    <div class="Input-Data">
+
+                        <div class="text4">Зареждане:</div>
+                        <input data-role="none" class=i1 name="zarejdane_3_1" id="zarN" type="number" placeholder="Пр: 20"> <span class="span1">лева.</span>
+                        <br>
+                        <br>
+                        <div class="text1">Разстояние:</div>
+                        <input data-role="none" class=i2 name="raztoqnie_3_1" id="razN" type="number" placeholder="Пр: 200"><span class="span1"> км.</span>
+
+
+                        <br>
+                        <br>
+
+
+
+
+                    </div>
+
+
+                    <div class="Output-Data">
+
+
+                        <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
+
+
+
+                        <input data-role="none" type="number" class=i2 name="cenagorivo_3_1" placeholder="Пр: 1.97"><span class="span1"> Лв.</span>
+
+                        <br>
+                        <br>
+
+                        <div class="text3" title="Изберете цена на гориво">Вид шофиране:</div>
+
+                        <select data-role="none" name="nachinnakarane_3_1" class="sel">
+                            <option value="1">Смесено</option>
+                            <option value="1.25">Градско</option>
+                            <option value="0.75">Извън градско</option>
+
+
+
+                        </select>
+
+
+
+
+                        <br>
+                        <br>
+
+
+
+                        <input data-role="none" class="button21" type="button" value="Изчисли" onclick="cal31()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+
+
+
+                        <br>
+                        <br>
+
+
+
+
+
+                        <div class="text2">Разход:</div>
+                        <input data-role="none" class=i3 name="razhod_3_1" id="razhN" type="number" title="Разхода на колата ви" readonly><span class="span1"> Лит/100 км.</span>
+
+
+
+                    </div>
+
+
+
+
+
+                </form>
+
+            </div>
+
+            <div class="Main12">
+
+                <form name="form32" class="Main1">
+                    <br>
+                    <div class="MainTitleOfpage">Разход с литри</div>
+                    <div class="Input-Data">
+
+                        <div class="text5">Количество:</div>
+
+                        <input data-role="none" class=i4 name="litri_3_2" id="litN" type="number" placeholder="Пр: 10"> <span class="span1">литра.</span>
+                        <br>
+                        <br>
+                        <div class="text1">Разстояние:</div>
+                        <input data-role="none" class=i5 name="raztoqnie_3_2" id="razN2" type="number" placeholder="Пр: 200" title="Въведете желано от вас разстояние"><span class="span1"> км.</span>
+
+
+                        <br>
+                        <br>
+
+
+
+
+                    </div>
+
+
+                    <div class="Output-Data">
+
+
+                        <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
+
+
+
+                        <input data-role="none" name="cenagorivo_3_2" class=i5 placeholder="Пр: 1.97">
+                        <span class="span1"> Лв.</span>
+                        <br>
+                        <br>
+
+                        <div class="text3" title="Изберете цена на гориво">Вид шофиране:</div>
+                        <select data-role="none" name="nachinnakarane_3_2" class="sel">
+                            <option value="1">Смесено</option>
+                            <option value="1.25">Градско</option>
+                            <option value="0.75">Извън градско</option>
+
+
+
+                        </select>
+                        <br>
+                        <br>
+                        <input data-role="none" class="button22" type="button" value="Изчисли" onclick="cal32()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+                        <br>
+                        <br>
+
+
+                        <div class="text2">Разход:</div>
+                        <input data-role="none" class=i6 name="razhod_3_2" id="razhN2" type="number" title="Разхода на колата ви" readonly><span class="span1"> Лит/100 км.</span>
+
+
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!--momenten-->
+        <div class="IdilePage4">
+
+            <div class="Main1c4">
+
+                <form name="form4" class="Main1">
+                    <br>
+                    <div class="MainTitleOfpage">Разход на празен ход</div>
+                    <div class="Input-Data">
+
+                        <div class="text4">Големина:</div>
+                        <input data-role="none" class="i4" id="kub" name="kubici" type="number" placeholder="Пр: 1800" required> <span class="span1">кубични см.</samp>
+               <br>
+               <br>
+               <div class="text5" >Работни <br> обороти:</div>
+               
+               <input  data-role="none" class="i8" id="obr" name="oboroti" type="number" placeholder="Пр: 650" required> <span class="span1">оборота.</samp>
+                <br>
+                <br>
+            <div class="text3" title="Изберете цена на гориво">Горивото:</div>
+            <select  data-role="none" name="gorivo" class="sel">
+               <option value="2.03">Бензин A95</option>
+               <option value="0.97">Пропан Бутан</option>
+               <option value="2.02">Дизел</option>
+              </select>
+            
+           <br>
+               
+
+
+        </div>
+
+
+        <div class="Output-Data">
+              
+                
+               <div class="text7" title="Изберете цена на гориво">Време работа:</div>
+            <select  data-role="none" name="vreme" class="sel">
+               <option value="1">1 сек</option>
+               <option value="10">10 сек</option>
+               <option value="30">30 сек</option>
+               <option value="60">1 мин</option>
+               <option value="300">5 мин</option>
+               <option value="600">10 мин</option>
+               <option value="1200">20 мин</option>
+               <option value="1800">30 мин</option>
+               <option value="3600">1 час</option>
+
+            </select>
+                <br>
+               <br>
+<input class="button2" type="button" value="Изчисли" onclick="otg()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+<br>
+               <br>
+        
+                
+
+          <div class="text6">Разход:</div>
+            <input data-role="none" class='i5' id="raz" name="RazhodNaChas" type="number"  title="Въведете желано от вас разстояние" readonly><span class="span1"> литра/час.</samp>
+        
+              <br>
+               <br>
+        <div class="text8">Цена:</div>
+            <input data-role="none" class='i3' id="cen" name="CenaNaChas" type="number"   readonly><span class="span1"> лева/час.</samp>
+        
+              <br>
+               <br>
+
+        </div> 
+
+              <div class="Output-Data">
+              
+        
+                
+
+<div class="text1">Разход за <br> избрано време:</div>
+            <input  data-role="none" class='i1' name="RazhodZaIzbranoVreme" type="number"  readonly><span class="span1"> литра/време.</samp>
+        
+              <br>
+               <br>
+        <div class="text2">Цена за  <br> избрано време:</div>
+            <input data-role="none" class="i2" name="CenaZaIzbranoVreme" type="number"   readonly><span class="span1"> лева/време.</samp>
+        
+              <br>
+               <br>
+
+        </div>
+            
+            
+         </form>
+      
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<footer>
+         <p class="copy">Georgi Dimitranov &copy;</p>
+         <P class="phone">0889 19 08 60</P>
+      </footer>
+
+<script type="text/javascript">
+    $(function() {
+
+
+        /*
+        "background-color":"#f9fffc",
+            "box-shadow":"0px 0px 10px #000000"
+
+        .css({
+            "background-color":"#000",
+            "box-shadow":"none"
+                });
+
+        */
+
+        $(document).ready(function() {
+            $(".DistancePage2").hide();
+            $(".ConsumptionPage3").hide();
+            $(".IdilePage4").hide();
+
+            // slagane nachalen Css na purviq buton oot menuto  <--------------
+            $(".Acena").css({
+                "background-color": "#f9fffc",
+                "box-shadow": "0px 0px 10px #000000",
+
+            });
+
+            function PageSwitch(shown, hidden1, hidden2, hidden3) {
+                $(shown).show();
+                $(hidden1).hide();
+                $(hidden2).hide();
+                $(hidden3).hide();
+            }
+
+            function MenuSwitch(active, unactive) {
+                $(active).css({
+                    "background-color": "#f9fffc",
+                    "box-shadow": "0px 0px 10px #000000",
+                    "transition": "0.4s"
+                });
+                $(unactive).css({
+                    "background-color": "#000",
+                    "box-shadow": "none",
+                    "transition": "0.4s"
+                });
+            }
+
+            /*
+
+            $(".Acena").click(function  () {
+              $(".MoneyPage1").show();
+              $(".DistancePage2").hide();
+              $(".ConsumptionPage3").hide();
+              $(".IdilePage4").hide();
+              
+              $(".Acena").css({
+                "background-color":"#f9fffc",
+                "box-shadow":"0px 0px 10px #000000"
+                ,"transition":"0.4s"
+                    });
+            $(".Adis , .Amom , .Araz").css({
+                "background-color":"#000",
+                "box-shadow":"none"
+                ,"transition":"0.4s"
+                    });
+            });
+
+            */
+
+            /*Acena Adis Araz Amom */
+
+            $(".Acena").click(function() {
+                PageSwitch(".MoneyPage1", ".DistancePage2", ".ConsumptionPage3", ".IdilePage4");
+                MenuSwitch(".Acena", ".Adis , .Amom , .Araz");
+
+            });
+
+            $(".Adis").click(function() {
+
+                PageSwitch(".DistancePage2", ".MoneyPage1", ".ConsumptionPage3", ".IdilePage4");
+                MenuSwitch(".Adis", ".Acena , .Amom , .Araz");
+
+
+
+            });
+
+            $(".Araz").click(function() {
+                PageSwitch(".ConsumptionPage3", ".MoneyPage1", ".DistancePage2", ".IdilePage4");
+                MenuSwitch(".Araz", ".Acena , .Amom , .Adis");
+
+
+            });
+
+            $(".Amom").click(function() {
+                PageSwitch(".IdilePage4", ".MoneyPage1", ".DistancePage2", ".ConsumptionPage3");
+                MenuSwitch(".Amom", ".Acena , .Adis , .Araz");
+
+
+            });
+
+
+
+
+            $.event.special.swipe.scrollSupressionThreshold = 10; // More than this horizontal displacement, and we will suppress scrolling.
+            $.event.special.swipe.horizontalDistanceThreshold = 30; // Swipe horizontal displacement must be more than this.
+            $.event.special.swipe.durationThreshold = 500; // More time than this, and it isn't a swipe.
+            $.event.special.swipe.verticalDistanceThreshold = 75; // Sw
+
+
+
+
+            function SwipePage(Show, Hide1, Hide2, Hide3) {
+
+                $(Show).show();
+                $(Hide1).hide();
+                $(Hide2).hide();
+                $(Hide3).hide();
+
+            }
+
+
+
+
+            $(".MoneyPage1").on("swipeleft", function() {
+
+
+                SwipePage(".DistancePage2", ".MoneyPage1", ".ConsumptionPage3", ".IdilePage4");
+                MenuSwitch(".Adis", ".Acena , .Amom , .Araz");
+
+            });
+
+            $(".MoneyPage1").on("swiperight", function() {
+                SwipePage(".IdilePage4", ".MoneyPage1",
+                    ".DistancePage2",
+                    ".ConsumptionPage3");
+
+                MenuSwitch(".Amom", ".Acena , .Adis , .Araz");
+
+
+            });
+
+
+
+
+            $(".DistancePage2").on("swipeleft", function() {
+                SwipePage(".ConsumptionPage3", ".DistancePage2",
+                    ".MoneyPage1",
+                    ".DistancePage2");
+
+
+                MenuSwitch(".Araz", ".Acena , .Amom , .Adis");
+
+
+
+            });
+            $(".DistancePage2").on("swiperight", function() {
+                SwipePage(".MoneyPage1", ".DistancePage2",
+                    ".IdilePage4",
+                    ".ConsumptionPage3");
+
+
+                MenuSwitch(".Acena", ".Adis , .Amom , .Araz");
+            });
+
+
+
+
+            $(".ConsumptionPage3").on("swipeleft", function() {
+                SwipePage(".IdilePage4", ".ConsumptionPage3",
+                    ".MoneyPage1",
+                    ".DistancePage2");
+
+
+
+                MenuSwitch(".Amom", ".Acena , .Adis , .Araz");
+
+            });
+
+            $(".ConsumptionPage3").on("swiperight", function() {
+                SwipePage(".DistancePage2", ".IdilePage4", ".ConsumptionPage3",
+                    ".MoneyPage1");
+
+
+                MenuSwitch(".Adis", ".Acena , .Amom , .Araz");
+
+            });
+
+
+
+
+            $(".IdilePage4").on("swipeleft", function() {
+                SwipePage(".MoneyPage1", ".DistancePage2", ".IdilePage4", ".ConsumptionPage3");
+
+
+                MenuSwitch(".Acena", ".Adis , .Amom , .Araz");
+            });
+
+            $(".IdilePage4").on("swiperight", function() {
+                SwipePage(".ConsumptionPage3", ".MoneyPage1", ".DistancePage2", ".IdilePage4");
+
+                MenuSwitch(".Araz", ".Acena , .Amom , .Adis");
+            });
+
+        });
+
+
+        $(document).ready(function() {
+            $(".Main12").hide();
+        });
+
+        $(".switchLiter").click(function() {
+            $(".Main11").hide();
+            $(".Main12").fadeIn(300);
+            $(".switchLiter").addClass("deepShadowForButtonSwitch");
+            $(".switchMoney").removeClass("deepShadowForButtonSwitch");
+
+
+        });
+
+        $(".switchMoney").click(function() {
+            $(".Main12").hide();
+            $(".Main11").fadeIn(300);
+            $(".switchMoney").addClass("deepShadowForButtonSwitch");
+            $(".switchLiter").removeClass("deepShadowForButtonSwitch");
+
+        });
+
+
+
+
+    });
+</script>
+<script type="text/javascript">
+        $.mobile.loading().hide();
+    </script>
+
+
+<script type="text/javascript">
+
+var myForm = document.form1;
+         //x=cena gorivo
+         //y=razhod
+         //c=zarejdane
+         //z=raztoqnie
+         var c, y, x, l, z, p;
+         
+        
+
+ function zar() {
+             z = myForm.rastoqnie_1.value;
+             y = myForm.razhod_1.value;
+             x = myForm.cena_gorivo_1.value;
+             p = (z * y) / 100;
+             l = myForm.zarejdane_litri_1.value;
+         
+             myForm.zarejdane_pari_1.value = (p * x).toFixed(2);
+         
+         
+         
+    myForm.zarejdane_litri_1.value = (myForm.zarejdane_pari_1.value / x).toFixed(2);
+         
+         
+         }
+
+
+
+
+
+
+
+
+
+
+// za purva stranica na 2 main stranica 
+var myForm21 = document.form11;
+  
+  function cal21 () {
+
+  
+  myForm21.raztoqnie_2_1.value = (((myForm21.zarejdane_2_1.value/myForm21.cenagorivo_2_1.value) *100 ) / myForm21.razhod_2_1.value ).toFixed(2);
+}
+
+// za vtora stranica na vrora main  strabica
+var myForm22 = document.form12;
+
+
+function cal22 () {
+  
+
+
+  myForm22.raztoqnie_2_2.value = (( myForm22.litri_2_2.value *100) / myForm22.razhod_2_2.value).toFixed(2);
+
+}
+
+
+
+
+
+var myForm31 = document.form31;
+var myForm32 = document.form32;
+ 
+
+function cal31() {
+  
+
+ 
+  
+  myForm31.razhod_3_1.value = (((100 * myForm31.zarejdane_3_1.value) / (myForm31.raztoqnie_3_1.value * myForm31.cenagorivo_3_1.value))*myForm31.nachinnakarane_3_1.value).toFixed(2);
+
+}
+function cal32() {
+  
+  myForm32.razhod_3_2.value = (((100 * myForm32.litri_3_2.value) / myForm32.raztoqnie_3_2.value)*myForm32.nachinnakarane_3_2.value).toFixed(2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var myForm4 = document.form4;
+
+    function otg() {
+
+
+
+
+        if (document.forms["form4"]["gorivo"].value == "2.03") {
+
+            myForm4.RazhodNaChas.value =
+                (((((((((myForm4.kubici.value / 2) / 1000) * myForm4.oboroti.value) * 60) / 1.414) / 1000) * 1.084) / 15.7) / 0.73).toFixed(3);
+
+            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(3);
+
+
+
+        }
+        if (document.forms["form4"]["gorivo"].value == "0.97") {
+
+            myForm4.RazhodNaChas.value =
+                (((((((((myForm4.kubici.value / 2) / 1000) * myForm4.oboroti.value) * 60) / 1.414) / 1000) * 1.084) / 24.5) / 0.54).toFixed(3);
+            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(3);
+        }
+
+        if (document.forms["form4"]["gorivo"].value == "2.02") {
+
+
+            myForm4.RazhodNaChas.value =
+                ((((((((myForm4.kubici.value / 2) / 1000) * myForm4.oboroti.value) * 60) / 1000) * 1.084) / 81) / 0.832).toFixed(3);
+            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(3);
+
+        }
+
+        myForm4.RazhodZaIzbranoVreme.value = ((myForm4.RazhodNaChas.value * myForm4.vreme.value) / 3600).toFixed(6);;
+
+        myForm4.CenaZaIzbranoVreme.value = (myForm4.RazhodZaIzbranoVreme.value * myForm4.gorivo.value).toFixed(6);
+
+
+
+
+    }
+
+         </script>
+</body>
+
+</html>

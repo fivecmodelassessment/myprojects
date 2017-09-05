@@ -1,0 +1,396 @@
+body,p,img,section{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	box-sizing: border-box;
+	width: 100%;
+	font-family: 'Work Sans', sans-serif;
+	color: white;
+	font-size: 20px;
+}
+body{
+	background-repeat: no-repeat;
+	background-position: top center;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6431cb+0,ec337d+100 */
+background: #6431cb; /* Old browsers */
+background: -moz-linear-gradient(80deg, #271251 0%, #ec337d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(80deg, #271251 0%,#ec337d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(80deg, #3e9390 0%,#040635 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6431cb', endColorstr='#ec337d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+header{
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	
+	
+}
+.logo-img{
+	float: left;
+	width:  50px;margin: 16px;
+}
+
+.title{
+	
+	font-family: 'Raleway', sans-serif;
+	font-size: 80px;
+	text-transform: uppercase;
+	letter-spacing: 40px;
+	-webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none;
+margin-top: 120px;
+color: white;
+text-shadow: 0px 4px 7px black;
+}
+.under-title{
+top: 40px;
+-webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none;
+text-shadow: 0px 2px 4px black;
+position: relative;
+font-size: 60px;
+text-transform: capitalize;
+font-family: 'Raleway', sans-serif;
+color: white;
+}
+.under-title span{
+	text-transform: uppercase;
+	font-size: 70px;
+	font-family: inherit;
+}
+section{
+	
+width: 80%;
+position: relative;
+display: inline-block;
+height: 480px;
+
+}
+.discover-me-btn{
+	width: 250px;
+height: 70px;
+border: 2px white solid;
+background-color: transparent;
+cursor: pointer;
+top: 70px;
+font-size: 20px;
+display: inline-block;
+overflow: hidden;
+
+position: relative;
+transition: 0.3s;
+font-family: 'Roboto Condensed', sans-serif;
+color: white;
+}
+.discover-me-btn:before{
+	content: "";
+top: 70px;
+position: absolute;
+left: 0px;
+background-color: white;
+width: 250px;
+height: 70px;
+z-index: -1;
+transition: all 0.4s ease-in-out;
+}
+.discover-me-btn:hover::before{
+	top: 0px;
+	transition: all 0.4s ease-in-out;
+}
+.discover-me-btn:hover{
+	color: #ec337d;
+transition: 0.3s;
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+
+
+.navigation-hamburger{
+	margin: 40px;
+float: right;
+width: 40px;
+z-index: 3;
+        right: 0px;
+    transition: 0.5s;
+position: fixed;
+}
+
+.nav-toggle span,
+ .nav-toggle span:before, 
+ .nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+ background: white;
+  position: absolute;
+  display: block;
+  content: '';
+transition: 0.3s ;
+}
+.nav-toggle span:before {
+  top: -10px;
+  transition: 0.3s ;
+}
+ .nav-toggle span:after {
+   bottom: -10px; 
+  transition:  0.3s ;
+}
+
+
+
+
+.nav-toggle span,
+ .nav-toggle span:before,
+  .nav-toggle span:after {
+  transition: all 0.3s ease-in-out;
+}
+.nav-toggle.active span {
+  background-color: transparent;
+}
+.nav-toggle.active span:before, 
+.nav-toggle.active span:after {
+  top: 0;
+  transition:  0.3s ;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#691c93+1,27d1cb+100 */
+background: #691c93; /* Old browsers */
+background: -moz-linear-gradient(45deg, #691c93 1%, #27d1cb 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#691c93', endColorstr='#27d1cb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.nav-toggle.active span:before {
+  transform: rotate(40deg);
+  
+  transition:  0.3s ;
+
+}
+.nav-toggle.active span:hover:before {
+  transform: rotate(45deg);
+  
+  transition:  0.3s ;
+
+}
+.nav-toggle.active span:after {
+  transform: rotate(-40deg);
+  transition:  0.3s ;
+}
+.nav-toggle.active span:hover:after {
+  transform: rotate(-45deg);
+  transition:  0.3s ;
+}
+
+
+
+
+
+.side-menu {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right:  0;box-shadow: 0 0 16px black;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 100px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the side-menu */
+}
+
+/* The navigation menu links */
+.side-menu a {
+    padding: 8px 8px 20px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    
+
+    
+}
+
+/* When you mouse over the navigation links, change their color */
+.side-menu a:hover, .offcanvas a:focus{
+  transition: 0.3s;
+background: linear-gradient(to right, rgb(165, 116, 209) 37%, #5fe2df 100%);
+    background-clip: border-box;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+    margin-left: 7px;
+    
+}
+
+
+.side-menu:before{
+	content: "";
+	width: 7px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#691c93+1,27d1cb+100 */
+background: #691c93; /* Old browsers */
+background: -moz-linear-gradient(45deg, #691c93 1%, #27d1cb 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#691c93', endColorstr='#27d1cb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+@media only screen and (max-width : 1200px) {
+	.title{
+		font-size: 65px;
+		letter-spacing: 27px;
+
+	}
+	.under-title{
+font-size: 50px;
+	}
+   .under-title span{
+   	font-size: 60px;
+   }
+header{
+	height: 360px;
+}
+.introduction{
+	font-size: 17px;
+}
+.discover-me-btn{   
+ width: 220px;
+    height: 60px;}
+
+
+.side-menu a{
+	font-size: 20px;
+}
+
+
+}
+
+
+@media only screen and (max-width : 480px) {
+	.title{
+		font-size: 45px;
+    letter-spacing: 8px;
+    margin-top: 130px;
+
+	}
+	section{
+		height: 370px;
+	}
+	.under-title{
+font-size: 32px;
+	}
+   .under-title span{
+   	font-size: 40px;
+   }
+header{
+	height: 360px;
+}
+.introduction{
+	font-size: 17px;
+}
+.discover-me-btn{   
+ width: 220px;
+    height: 60px;}
+
+
+.side-menu a{
+	font-size: 20px;
+}
+
+.navigation-hamburger {
+    
+    position: relative;
+}
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 375px) {
+	.title{
+		font-size: 43px;
+    letter-spacing: 5px;
+    margin-top: 130px;
+
+	}
+	.under-title{
+font-size: 33px;
+	}
+   .under-title span{
+   	font-size: 35px;
+   }
+header{
+	height: 360px;
+}
+.introduction{
+	font-size: 16px;
+}
+.discover-me-btn{   
+ width: 220px;
+    height: 60px;}
+
+
+.side-menu a{
+	font-size: 20px;
+}
+
+.navigation-hamburger {
+    
+    position: relative;
+}
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 320px) {
+	.title{
+		font-size: 43px;
+    letter-spacing: 5px;
+    margin-top: 130px;
+
+	}
+	.under-title{
+font-size: 32px;
+	}
+   .under-title span{
+   	font-size: 35px;
+   }
+header{
+	height: 360px;
+}
+.introduction{
+	font-size: 16px;
+}
+.discover-me-btn{   
+ width: 220px;
+    height: 60px;}
+
+
+.side-menu a{
+	font-size: 20px;
+}
+
+.navigation-hamburger {
+    
+    position: relative;
+}
+}
