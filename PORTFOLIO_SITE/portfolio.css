@@ -1,22 +1,36 @@
-body,p,img,section{
+*
+{        
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+    /*You just need this if you are only concerned with android and not desktop browsers.*/
+outline: none; 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+} 
+body,p,section{
 	margin: 0;
 	padding: 0;
 	text-align: center;
 	box-sizing: border-box;
 	width: 100%;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	color: white;
-	font-size: 20px;
+	font-size: 18px;
+	font-weight: 300;
+	
 }
 body{
 	background-repeat: no-repeat;
 	background-position: top center;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6431cb+0,ec337d+100 */
 background: #6431cb; /* Old browsers */
-background: -moz-linear-gradient(80deg, #271251 0%, #ec337d 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(80deg, #271251 0%,#ec337d 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(80deg, #3e9390 0%,#040635 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6431cb', endColorstr='#ec337d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: -moz-linear-gradient(90deg, #2e8296 0%, #ead46b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(90deg, #2e8296 0%,#ead46b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(90deg, #2e8296 0%,#ead46b 100%);/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e8296', endColorstr='#ec337d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 header{
 	width: 100%;
@@ -25,13 +39,22 @@ header{
 	
 	
 }
+.bg_swords{
+	position: fixed;
+display: inline-block;
+width: 100%;
+left: 0px;
+    z-index: -300;
+height: 100%;
+}
 .logo-img{
 	float: left;
-	width:  50px;margin: 16px;
+	width:  50px;
+	margin: 16px;
 }
 
 .title{
-	
+	font-weight: 100;
 	font-family: 'Raleway', sans-serif;
 	font-size: 80px;
 	text-transform: uppercase;
@@ -54,6 +77,7 @@ font-size: 60px;
 text-transform: capitalize;
 font-family: 'Raleway', sans-serif;
 color: white;
+font-weight: 100;
 }
 .under-title span{
 	text-transform: uppercase;
@@ -83,6 +107,13 @@ position: relative;
 transition: 0.3s;
 font-family: 'Roboto Condensed', sans-serif;
 color: white;
+outline: none;
+-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .discover-me-btn:before{
 	content: "";
@@ -93,14 +124,14 @@ background-color: white;
 width: 250px;
 height: 70px;
 z-index: -1;
-transition: all 0.4s ease-in-out;
+transition: all 0.2s ease-in-out;
 }
 .discover-me-btn:hover::before{
 	top: 0px;
-	transition: all 0.4s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 .discover-me-btn:hover{
-	color: #ec337d;
+	color: #669b8a;
 transition: 0.3s;
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -115,9 +146,14 @@ width: 40px;
 z-index: 3;
         right: 0px;
     transition: 0.5s;
-position: fixed;
+position: relative;
 }
 
+
+.nav-toggle{
+	width: 50px;
+    height: 50px;
+}
 .nav-toggle span,
  .nav-toggle span:before, 
  .nav-toggle span:after {
@@ -155,12 +191,12 @@ transition: 0.3s ;
 .nav-toggle.active span:after {
   top: 0;
   transition:  0.3s ;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#691c93+1,27d1cb+100 */
-background: #691c93; /* Old browsers */
-background: -moz-linear-gradient(45deg, #691c93 1%, #27d1cb 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#691c93', endColorstr='#27d1cb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6431cb+0,ec337d+100 */
+background: #6431cb; /* Old browsers */
+background: -moz-linear-gradient(90deg, #2e8296 0%, #ead46b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(90deg, #2e8296 0%,#ead46b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(90deg, #2e8296 0%,#ead46b 100%);/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e8296', endColorstr='#ec337d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .nav-toggle.active span:before {
   transform: rotate(40deg);
@@ -208,6 +244,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#691c93', end
     color: white;
     display: block;
     transition: 0.3s;
+    width: 240px;
+    font-weight: 200;
     
 
     
@@ -233,13 +271,426 @@ background-clip: text;
 	position: absolute;
 	top: 0;
 	left: 0;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#691c93+1,27d1cb+100 */
-background: #691c93; /* Old browsers */
-background: -moz-linear-gradient(45deg, #691c93 1%, #27d1cb 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, #691c93 1%,#27d1cb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#691c93', endColorstr='#27d1cb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6431cb+0,ec337d+100 */
+background: #6431cb; /* Old browsers */
+background: -moz-linear-gradient(90deg, #2e8296 0%, #ead46b 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(90deg, #2e8296 0%,#ead46b 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(90deg, #2e8296 0%,#ead46b 100%);/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e8296', endColorstr='#ec337d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+.social-media-icon{
+	    width: 50px;
+    display: inline-block;
+transition: 0.3s;
+margin: 0 10px 0 10px;
+text-align: center;transition: 0.3s ;
+    
+}
+.social-media-icon:hover{
+	width: 53px;
+	transition: 0.3s ;
+}
+ul{
+	list-style: none;
+	display: inline-block;
+padding: 0;
+margin: 0;
+
+}
+
+ul li{
+	float: left;
+}
+.social-media-wraper ul li:hover{
+	margin-top: 3px;
+	transition: 0.3s;
+}
+
+.under-social-media{
+	font-size: 13px;
+    margin-top: 16px;
+}
+.social-media-wraper
+{
+	display: block;
+width: auto;
+height: 60px;
+text-align: center;
+margin-top: 140px;
+}
+
+.C_R_p{
+	margin-top: 50px;
+	font-size: 17px;
+	margin-bottom: 25px; 
+}
+/*trinagles*/
+.animation-trinagles{
+	width: 240px;
+	
+	margin-top: -150px;
+float: right;
+}
+
+
+.tr1{
+	position: relative;
+	width: 70px;
+	display: block;
+	z-index: 1;
+	    top: 200px;
+    left: 240px;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+.tr1_an{
+	opacity: 1;
+	transition: all 0.9s ease-in-out;
+	 left: 40px;
+}
+
+
+
+.tr2{
+	position: relative;
+	width: 100px;
+	display: block;
+	z-index: 2;
+	    top: 110px;
+    left: 240px;
+opacity: 0;
+	transition:all 0.3s cubic-bezier(0.42, 0, 0.31, 1.42);
+
+}
+.tr2_an{
+	opacity: 1;
+	transition: all 0.7s cubic-bezier(0.42, 0, 0.31, 1.42);
+	 left: 60px;
+}
+.tr3{
+	position: relative;
+	width: 85px;
+	display: block;
+	z-index: 3;
+	  left: 240px;
+    top: -14px;
+    opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+.tr3_an{
+	opacity: 1;
+	transition: all 0.7s ease-in-out;
+	 left: 120px;
+}
+.tr4{
+	position: relative;
+	width: 30px;
+	display: block;
+	z-index: 3;
+	  left: 240px;
+        top: 60px;
+        opacity: 0;
+	transition: all 0.3s cubic-bezier(0.42, 0, 0.31, 1.42);
+}
+.tr4_an{
+	opacity: 1;
+	transition: all 0.7s cubic-bezier(0.42, 0, 0.31, 1.42);
+	 left: 50px;
+}
+.tr5{
+	position: relative;
+	width: 50px;
+	display: block;
+	z-index: 3;
+	      left: 240px;
+    top: -36px;
+    opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+.tr5_an{
+	opacity: 1;
+	transition: all 0.6s ease-in-out;
+	 left: 100px;
+}
+.tr6{
+position: relative;
+	width: 50px;
+	display: block;
+	z-index: 3;
+	      left: 240px;
+    top: 0px;
+    opacity: 0;
+	transition: all 0.3s cubic-bezier(0.42, 0, 0.31, 1.42);
+
+}
+.tr6_an{
+	opacity: 1;
+	transition: all 0.7s cubic-bezier(0.42, 0, 0.31, 1.42);
+	 left: 80px;
+}
+.tr7{
+	position: relative;
+	width: 70px;
+	display: block;
+	z-index: 4;
+	     left: 240px;
+    top: -45px;
+    opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+.tr7_an{
+	opacity: 1;
+	transition: all 0.8s ease-in-out;
+	 left: 90px;
+}
+
+
+
+.tr8{
+	position: relative;
+	width: 100px;
+	display: block;
+	z-index: 4;
+	     left: 240px;
+    top: -30px;
+    opacity: 0;
+	transition: all 0.3s cubic-bezier(0.42, 0, 0.31, 1.42);
+}
+.tr8_an{
+	opacity: 1;
+	transition: all 0.7s cubic-bezier(0.42, 0, 0.31, 1.42);
+	 left: 50px;
+}
+
+
+
+
+.tr9{
+	    position: relative;
+    width: 80px;
+    display: block;
+    z-index: 4;
+    left: 240px;
+    top: -95px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.tr9_an{
+	opacity: 1;
+	transition: all 0.6s ease-in-out;
+	 left: 90px;
+}
+
+
+
+
+.tr10{
+	    position: relative;
+    width: 50px;
+    display: block;
+    z-index: 4;
+    left: 240px;
+    top: -132px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.31, 1.42);
+}
+.tr10_an{
+	opacity: 1;
+	transition: all 0.8s cubic-bezier(0.42, 0, 0.31, 1.42);
+	 left: 90px;
+}
+
+
+
+/*WHO AM I*/
+
+.who_am_i_section{
+	height: 950px;
+}
+.who_am_i_header{
+height: 300px;
+}
+
+.who_am_i_text{
+	line-height: 30px;
+    
+text-shadow: 1px 1px 2px #6b6b6a;
+    
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+
+.who_am_i_C_R{
+	    position: absolute;
+    bottom: 0;
+}
+
+.the_vision_text,.the_quest_text{ 
+ margin-bottom: 60px;
+ text-indent: 50px;
+ text-shadow: 1px 1px 2px #6b6b6a;
+   position: relative;
+    top: 70px;
+    line-height: 30px;
+     font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+}
+    .the_vision_text{
+text-align: left;
+    padding: 0 100px 0 0;
+}
+.the_quest_text{
+	text-align: right;
+	padding: 0 0 0 100px;
+}
+
+.the_vision{
+	padding-left: 30px;
+	text-align: left;
+}
+.the_quest{
+	padding-right: 30px;
+	text-align: right;
+}
+/*WHO AM I*/
+
+
+/*PROJECTS*/
+.projects_container{
+
+}
+.project{
+    width: 1000Px;
+    height: 1000px;
+    display: inline-block;
+    position: relative;
+}
+
+.project_content{
+	float: left;
+	width: 50%;
+	position: relative;
+
+}
+.project_image{
+	width: 500px;
+}
+.project_info_text_title{
+margin: 0;
+
+
+text-shadow: 1px 1px 2px #a2a2a2;
+
+position: relative;
+font-weight: 300;
+text-align: left;
+font-family: 'Open Sans', sans-serif;
+    
+    margin-bottom: -40px;
+
+font-size: 35px;
+
+}
+.project_info_text{
+text-align: justify;
+    margin: 50px auto;
+    line-height: 1.4;
+    position: relative;
+    text-shadow: 1px 1px 2px #90908b;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+
+}
+
+.projects_btn{
+	    top: 0;
+    width: 170px;
+    margin-left: 60px;
+    height: 60px;
+    float: left;
+}
+.mobile-only-p{
+	text-align: left;
+
+padding-left: 100px;
+
+margin-top: 120px;
+
+
+
+font-size: 15px;
+}
+
+
+.semi-title,.semi-title-hidden{
+	margin-bottom: 30px;
+    text-align: right;
+    padding-left: 100px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+}
+.semi-title-hidden{
+	display: none;
+}
+/*PROJECTS*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width : 1200px) {
@@ -268,18 +719,171 @@ header{
 .side-menu a{
 	font-size: 20px;
 }
+.who_am_i_C_R{
+	    margin-top: 170px;
+}
+
+
+
+
+.project{
+	width: 100%;
+}
+.project_image{
+	width: 100%;
+}
+.projects_btn{
+	    top: 0;
+    width: 170px;
+    margin-left: 30px;
+    height: 60px;
+    float: left;
+}
+.project_info_text{
+	padding: 0;
+}
+.semi-title{
+	font-size: 33px;
+}
+.project_info_text_title{
+	font-size: 30px;
+}
+.mobile-only-p {
+    
+    padding-left: 70px;
+   
+}
+
+
+}
+@media only screen and (max-width : 1000px) {
+.projects_btn{
+	    top: 0;
+    width: 150px;
+    margin-left: 30px;
+    height: 50px;
+    float: left;
+}
+.mobile-only-p {
+    padding-left: 60px;
+    margin-top: 110px;
+}
+.projects_container {
+    width: 100%;
+    padding: 0 30px;
+}
+.who_am_i_section {
+    height: 950px;
+}
+}
+
+@media only screen and (max-width : 850px) {
+.project_info_text {
+    padding: 0;
+    margin-bottom: 20px;
+}
+.mobile-only-p {
+    padding-left: 50px;
+    margin-top: 80px;
+}
+.projects_btn{
+	    top: 0;
+    width: 130px;
+    margin-left: 30px;
+    height: 50px;
+    font-size: 16px;
+    float: left;
+}
+.who_am_i_section {
+    height: 1000px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 700px) {
+.semi-title-hidden{
+	display: block;
+    text-align: center;
+    padding: 0;
+    font-size: 30px;
+}
+.semi-title{
+	display: none;
+}
+
+.project_content{
+	    float: none;
+    width: 70%;
+    display: inline-block;
+}
+.project_info_text {
+    
+    margin-bottom: 40px;
+}
+.projects_btn {
+    width: 40%;
+}
+
+.mobile-only-p {
+    padding-left: 0px;
+    margin-top: 100px;
+    text-align: center;    font-size: 13px;
+}
+
+.the_vision_text, .the_quest_text{
+	padding: 0;
+	text-align: justify;
+	text-indent: 0px;
+}
+
+.who_am_i_section {
+    height: 1100px;
+}
+
+
+
 
 
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width : 480px) {
+	.who_am_i_header {
+    height: 250px;
+}
+	.projects_header{
+		height: 300px;
+	}
 	.title{
 		font-size: 45px;
     letter-spacing: 8px;
     margin-top: 130px;
 
 	}
+	.who_am_i_section {
+    height: 1350px;
+}
 	section{
 		height: 370px;
 	}
@@ -305,9 +909,47 @@ header{
 }
 
 .navigation-hamburger {
-    
+        margin: 38px;
     position: relative;
 }
+
+
+.social-media-wraper
+{
+    margin-top: 110px;
+}
+.who_am_i_C_R{
+	    margin-top: 170px;
+}
+
+.semi-title{
+	display: none;
+}
+
+.project_content {
+    float: none;
+    width: 85%;
+    display: inline-block;
+}
+.project_info_text {
+    
+    margin-bottom: 40px;
+}
+.projects_btn {
+   margin: 20px 40px;
+    width: 75%;
+    position: relative;
+}
+
+
+.mobile-only-p {
+    padding-left: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
 }
 
 
@@ -350,6 +992,16 @@ header{
     
     position: relative;
 }
+.project_content {
+    
+    width: 90%;
+   
+}
+.projects_btn {
+    margin: 20px 40px;
+    width: 75%;
+    position: relative;
+}
 }
 
 
@@ -363,16 +1015,16 @@ header{
 
 @media only screen and (max-width : 320px) {
 	.title{
-		font-size: 43px;
+		font-size: 40px;
     letter-spacing: 5px;
     margin-top: 130px;
 
 	}
 	.under-title{
-font-size: 32px;
+font-size: 30px;
 	}
    .under-title span{
-   	font-size: 35px;
+   	font-size: 33px;
    }
 header{
 	height: 360px;
@@ -392,5 +1044,13 @@ header{
 .navigation-hamburger {
     
     position: relative;
+}
+.projects_btn {
+    margin: 20px 20px;
+    width: 80%;
+    position: relative;
+}
+.who_am_i_section {
+    height: 1600px;
 }
 }

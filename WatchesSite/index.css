@@ -894,16 +894,16 @@ background-color: #2f2424;
 .contact-location-and-phones-wraper {
     width: auto;
     height: 600px;
-    background-color: #E9D0A04D;
-    box-shadow: 0 0 2px #39383880;
+    background-color: #FFF6E6;
+    box-shadow: 0 0 2px #938d8d;
 }
 .contacts-father-div {
-    background-color: #E9D0A04D;
+    background-color: #FFF6E6;
     width: 500px;
     height: 420px;
     display: inline-block;
     float: left;
-    box-shadow: 0 0 2px #39383880;
+    box-shadow: 0 0 2px #938d8d;
 }
 .contact-gif-wraper {
     height: 420px;
@@ -1043,7 +1043,7 @@ background-color: #2f2424;
 .contacts-location-maps {
     border: none;
     outline: none;
-    box-shadow: 0 0 3px #39383880;
+    box-shadow: 0 0 3px #938d8d;
     display: inline-block;
     width: 800px;
     position: relative;
@@ -1059,7 +1059,7 @@ background-color: #2f2424;
     display: inline-block;
     font-size: 17px;
     text-align: center;
-    background-color: #874c45cc;
+    background-color: #ab6e67;
     width: 100px;
     height: 30px;
     border: none;
@@ -1089,8 +1089,8 @@ background-color: #2f2424;
 /*STORE*/
 
 .store-filters-wraper {
-    background-color: #fef6f699;
-    box-shadow: 0 0 2px #39383880;
+    background-color: #fef6f6;
+    box-shadow: 0 0 2px #938d8d;
     height: 600px;
     width: 200px;
     float: left;
@@ -1100,11 +1100,11 @@ background-color: #2f2424;
 }
 .store-articules-wraper {
     width: 600px;
-    background-color: #fef6f699;
+    background-color: #fef6f6;
     height: 2500px;
     margin-bottom: 50px;
     display: inline-block;
-    box-shadow: 0 0 2px #39383880;
+    box-shadow: 0 0 2px #938d8d;
 }
 .store-test-li {
     width: 204px;
@@ -1230,7 +1230,7 @@ background-color: #2f2424;
     padding-left: 10px;
 
     font-size: 16px;
-    box-shadow: 0 0 3px #9c9595cc;
+    box-shadow: 0 0 2px #6a6868;
     border: none;
 }
 /*Modal*/
@@ -1260,7 +1260,7 @@ background-color: #2f2424;
     bottom: 0;
     display: flex;
     z-index: 2;
-    background-color: #000c;
+    background-color: rgba(0, 0, 0, 0.75);;
     transition: all 0.5s ease-in-out;
     opacity: 0;
     pointer-events: none;
@@ -1491,7 +1491,7 @@ transition: all 0.6s cubic-bezier(.42,0,.49,1.43);
     bottom: 0;
     display: flex;
     z-index: 5;
-    background-color: #000c;
+    background-color: rgba(0, 0, 0, 0.75);
 
 transition: all 0.5s ease-in-out;
 opacity: 0;
