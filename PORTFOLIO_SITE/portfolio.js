@@ -54,21 +54,7 @@ nav_switch = !nav_switch;
 $(".navigation-hamburger").click(Side_nav_visible);
 
 
-$("#github_icon").hover(function() {
-	$(this).attr('src', 'images/giticon2.png');
-}, function() {
-	$(this).attr('src', 'images/giticon.png');
-});
-$("#facebook_icon").hover(function() {
-	$(this).attr('src', 'images/fbicon2.png');
-}, function() {
-	$(this).attr('src', 'images/fbicon.png');
-});
-$("#instagram_icon").hover(function() {
-	$(this).attr('src', 'images/igramicon2.png');
-}, function() {
-	$(this).attr('src', 'images/igramicon.png');
-});
+
 
 
 

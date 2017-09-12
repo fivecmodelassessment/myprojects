@@ -10,10 +10,12 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/jquery-3.0.0.js"
+              integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="
+              crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="vindol.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vindol_newCss.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <title>Car Variables</title>
 
 </head>
@@ -64,6 +66,20 @@
     <div class="ConteinerAll">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!--stranica za pari-->
 
         <div class="MoneyPage1 " data-role="page">
@@ -71,7 +87,7 @@
 
             <div class="Main1c">
 
-                <form name="form1" class="Main1">
+                <form name="form1" id="form1" class="Main1">
                     <br>
                     <div class="MainTitleOfpage">Цена на пътуване</div>
                     <div class="Input-Data">
@@ -89,12 +105,10 @@
                   
                <br>
                <br>
-            </div>
             
-
-            <div class="Output-Data">
                 
-                <input data-role="none" class="button2" type="button" value="Изчисли" onclick="zar()" >
+                <input data-role="none" class="button2" type="button" value="Сметни" onclick="zar()" />
+                <input data-role="none" value="Изчисти" class="clear_btn" type="button" onclick="clear_form1()" />
                 <br>
                <br>
                <div class="text4" >Зареждане:</div>
@@ -176,7 +190,7 @@
 
     <div class="Main11" >
          
-      <form name="form11" class="Main1"><br>
+      <form name="form21" id="form21" class="Main1"><br>
            <div class="MainTitleOfpage">Разстояние с пари</div>
         <div class="Input-Data">
           
@@ -190,10 +204,9 @@
 
 
 
-                    </div>
-
-
-                    <div class="Output-Data">
+                         
+               <br>
+               <br>
 
 
                         <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
@@ -206,7 +219,8 @@
                 <br>
                <br>
                
-                <input data-role="none" class="button21" type="button" value="Изчисли" onclick="cal21()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+                <input data-role="none" class="button21" type="button" value="Сметни" onclick="cal21()" >
+                <input data-role="none" value="Изчисти" class="clear_btn" type="button" onclick="clear_form21()" />
              <br>
              <br>
                 
@@ -229,9 +243,13 @@
 
             </div>
 
+
+
+
+
             <div class="Main12">
 
-                <form name="form12" class="Main1">
+                <form name="form22" id="form22" class="Main1">
                     <br>
                     <div class="MainTitleOfpage">Разстояние с литри</div>
                     <div class="Input-Data">
@@ -247,10 +265,9 @@
 
 
 
-                    </div>
-
-
-                    <div class="Output-Data">
+                         
+               <br>
+               <br>
 
 
                         <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
@@ -262,7 +279,8 @@
                 <br>
                <br>
                
-                <input data-role="none" class="button22" type="button" value="Изчисли" onclick="cal22()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+                <input data-role="none" class="button22" type="button" value="Сметни" onclick="cal22()" >
+                <input data-role="none" value="Изчисти" class="clear_btn" type="button" onclick="clear_form22()" />
              <br>
              <br>
                 
@@ -270,7 +288,7 @@
 
         
 <div class="text1">Разстояние:</div>
-            <input data-role="none" class=i5 name="raztoqnie_2_2" id="razN2" type="number"   title="Въведете желано от вас разстояние"  readonly><span class="span1"> км.</span>
+            <input data-role="none" class="i5 input_centrated" name="raztoqnie_2_2" id="razN2" type="number"   title="Въведете желано от вас разстояние"  readonly><span class="span1"> км.</span>
 
 
                         <br>
@@ -293,6 +311,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!--stranica za razhod-->
         <div class="ConsumptionPage3" data-role="page">
             <div class="butoniSwitch">
@@ -306,7 +345,7 @@
 
             <div class="Main11">
 
-                <form name="form31" class="Main1">
+                <form name="form31" id="form31" class="Main1">
                     <br>
                     <div class="MainTitleOfpage">Разход с пари</div>
                     <div class="Input-Data">
@@ -325,10 +364,7 @@
 
 
 
-                    </div>
-
-
-                    <div class="Output-Data">
+                    
 
 
                         <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
@@ -359,7 +395,8 @@
 
 
 
-                        <input data-role="none" class="button21" type="button" value="Изчисли" onclick="cal31()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+                        <input data-role="none" class="button21" type="button" value="Сметни" onclick="cal31()" >
+                        <input data-role="none" value="Изчисти" class="clear_btn" type="button" onclick="clear_form31()" />
 
 
 
@@ -371,7 +408,7 @@
 
 
                         <div class="text2">Разход:</div>
-                        <input data-role="none" class=i3 name="razhod_3_1" id="razhN" type="number" title="Разхода на колата ви" readonly><span class="span1"> Лит/100 км.</span>
+                        <input data-role="none" class="i3 input_centrated" name="razhod_3_1" id="razhN" type="number" title="Разхода на колата ви" readonly><span class="span1"> Лит/100 км.</span>
 
 
 
@@ -385,9 +422,18 @@
 
             </div>
 
+
+
+
+
+
+
+
+
+
             <div class="Main12">
 
-                <form name="form32" class="Main1">
+                <form name="form32" id="form32" class="Main1">
                     <br>
                     <div class="MainTitleOfpage">Разход с литри</div>
                     <div class="Input-Data">
@@ -407,10 +453,7 @@
 
 
 
-                    </div>
-
-
-                    <div class="Output-Data">
+                  
 
 
                         <div class="text3" title="Изберете цена на гориво">Цена на горивото:</div>
@@ -433,13 +476,14 @@
                         </select>
                         <br>
                         <br>
-                        <input data-role="none" class="button22" type="button" value="Изчисли" onclick="cal32()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+                        <input data-role="none" class="button22" type="button" value="Сметни" onclick="cal32()" >
+                        <input data-role="none" value="Изчисти" class="clear_btn" type="button" onclick="clear_form32()" />
                         <br>
                         <br>
 
 
                         <div class="text2">Разход:</div>
-                        <input data-role="none" class=i6 name="razhod_3_2" id="razhN2" type="number" title="Разхода на колата ви" readonly><span class="span1"> Лит/100 км.</span>
+                        <input data-role="none" class="i6 input_centrated" name="razhod_3_2" id="razhN2" type="number" title="Разхода на колата ви" readonly><span class="span1"> Лит/100 км.</span>
 
 
                     </div>
@@ -456,12 +500,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!--momenten-->
         <div class="IdilePage4">
 
             <div class="Main1c4">
 
-                <form name="form4" class="Main1">
+                <form name="form4"  id="form4" class="Main1">
                     <br>
                     <div class="MainTitleOfpage">Разход на празен ход</div>
                     <div class="Input-Data">
@@ -484,12 +554,11 @@
             
            <br>
                
+     
+               
+               <br>
 
-
-        </div>
-
-
-        <div class="Output-Data">
+        
               
                 
                <div class="text7" title="Изберете цена на гориво">Време работа:</div>
@@ -507,37 +576,37 @@
             </select>
                 <br>
                <br>
-<input class="button2" type="button" value="Изчисли" onclick="otg()" title="Натиснете. За да изчислите колко ще трябва да заредите ">
+<input class="button2" type="button" value="Сметни" onclick="otg()" >
+<input data-role="none" value="Изчисти" class="clear_btn" type="button" onclick="clear_form4()" />
 <br>
                <br>
         
                 
 
           <div class="text6">Разход:</div>
-            <input data-role="none" class='i5' id="raz" name="RazhodNaChas" type="number"  title="Въведете желано от вас разстояние" readonly><span class="span1"> литра/час.</samp>
+            <input data-role="none" class='i5 input_centrated' id="raz" name="RazhodNaChas" type="number"  title="Въведете желано от вас разстояние" readonly><span class="span1"> литра/час.</samp>
         
               <br>
                <br>
         <div class="text8">Цена:</div>
-            <input data-role="none" class='i3' id="cen" name="CenaNaChas" type="number"   readonly><span class="span1"> лева/час.</samp>
+            <input data-role="none" class='i3 input_centrated' id="cen" name="CenaNaChas" type="number"   readonly><span class="span1"> лева/час.</samp>
         
               <br>
                <br>
 
-        </div> 
-
-              <div class="Output-Data">
+              
+            
               
         
                 
 
 <div class="text1">Разход за <br> избрано време:</div>
-            <input  data-role="none" class='i1' name="RazhodZaIzbranoVreme" type="number"  readonly><span class="span1"> литра/време.</samp>
+            <input  data-role="none" class='i1 input_centrated' name="RazhodZaIzbranoVreme" type="number"  readonly><span class="span1"> литра/време.</samp>
         
               <br>
                <br>
         <div class="text2">Цена за  <br> избрано време:</div>
-            <input data-role="none" class="i2" name="CenaZaIzbranoVreme" type="number"   readonly><span class="span1"> лева/време.</samp>
+            <input data-role="none" class="i2 input_centrated" name="CenaZaIzbranoVreme" type="number"   readonly><span class="span1"> лева/време.</samp>
         
               <br>
                <br>
@@ -605,7 +674,7 @@
             function MenuSwitch(active, unactive) {
                 $(active).css({
                     "background-color": "#f9fffc",
-                    "box-shadow": "0px 0px 10px #000000",
+                    "box-shadow": "rgb(103, 102, 102) 0px 2px 7px",
                     "transition": "0.4s"
                 });
                 $(unactive).css({
@@ -795,7 +864,10 @@
 
         });
 
-
+$(".button2 , .button21 , .button22 , .clear_btn").bind('touchstart touchend', function() {
+        
+        $(this).toggleClass('button_clicked');
+    });
 
 
     });
@@ -946,6 +1018,28 @@ var myForm4 = document.form4;
 
 
     }
+
+function clear_form1(){
+   document.getElementById("form1").reset();
+}
+function clear_form21(){
+   document.getElementById("form21").reset();
+}
+function clear_form22(){
+   document.getElementById("form22").reset();
+}
+function clear_form31(){
+   document.getElementById("form31").reset();
+}
+function clear_form32(){
+   document.getElementById("form32").reset();
+}
+function clear_form4(){
+   document.getElementById("form4").reset();
+}
+
+
+
 
          </script>
 </body>
