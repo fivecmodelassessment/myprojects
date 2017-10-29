@@ -14,12 +14,14 @@ $(window).scroll(function  () {
 if (wScroll > 150 ) {
 
 $(".main-navigation-parrent").addClass("main-navigation-parrent-passClass");
-$("article").css({'margin-top':'75px'});
+$(".main-navigation").addClass("main-navigation_on_scroll");
+$("article").css({'margin-top':'35px'});
 
 }//end of main if
  
  if (wScroll < 150) {
 $(".main-navigation-parrent").removeClass("main-navigation-parrent-passClass");
+$(".main-navigation").removeClass("main-navigation_on_scroll");
 $("article").css({'margin-top':'0'});
 }//end of main if
 
@@ -304,6 +306,9 @@ ActiveColorBtn(".third-to-sixt");
 function ActiveColorBtn(actie) {
 	$(actie).click(function(){
 		$(".brand-filter-first-colors").removeClass("brand-filter-first-colors-active");
+
+		$(".serch_brands_btn").addClass("serch_brands_btn_is_visible");
+
 		$(actie).addClass("brand-filter-first-colors-active");
 
 		
@@ -317,9 +322,6 @@ function ActiveColorBtn(actie) {
 
 
 
-$("#filter-btn-male").hover(function () {
-		$("#test").html("(2545)");
-});
 
 
 

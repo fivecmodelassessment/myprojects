@@ -2,74 +2,85 @@
 <html>
 
 <head>
-    <title>Dimitranov - Portfolio</title>
+    <title>Dimitranov - Home</title>
     <meta charset="utf-8" name="viewport" content="width=320, initial-scale=1" />
-    
-     <script src="https://code.jquery.com/jquery-3.0.0.js"
-              integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="
-              crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="portfolio.css">
-     <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600|Open+Sans:300,400,600|Roboto+Condensed|Work+Sans:300" rel="stylesheet">
-    <script type="text/javascript" src="portfolio.js"></script>  
-    
-    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600|Waiting+for+the+Sunrise|Open+Sans:300,400,600|Roboto+Condensed|Work+Sans:300" rel="stylesheet">
+    <script type="text/javascript" src="portfolio.js"></script>
+    <script type="text/javascript" src="indexScroll.js"></script>
+
 </head>
 
 <body>
 
-<div class="side-menu" id="side-menu">
+    <div class="side-menu" id="side-menu">
 
-  <a class="nav-toggle-x" href="#"><span></span></a>
-  <a href="index.html">Home</a>
-  <a href="who_am_i.html">Who am I</a>
-  <a href="projects.html">Projects</a>
-  <a href="skills.html">Skills</a>
-  <a href="contacts.html">Contact</a>
-
-  <div class="animation-trinagles">
-      <img class="tr1" src="images/tr11.png">
-      <img class="tr2" src="images/tr22.png">
-      <img class="tr3" src="images/tr33.png">
-      <img class="tr4" src="images/tr11.png">
-      <img class="tr5" src="images/tr22.png">
-      <img class="tr6" src="images/tr33.png">
-      <img class="tr7" src="images/tr22.png">
-      <img class="tr8" src="images/tr22.png">
-      <img class="tr9" src="images/tr11.png">
-      <img class="tr10" src="images/tr22.png">
-  </div>
-
-</div>
-<header>
-  <img src="images/GD_logo.png" class="logo-img">
-  <div class="navigation-hamburger"><a class="nav-toggle" href="#"><span></span></a></div>
-  <p class="title">dimitranov</p>
-  <p class="under-title">a future <span>ui/ux</span> designer</p>
+          <a class="nav-toggle-x" href="#"><span></span></a>
+        <div class="nav_a_wraper"><a href="index.html">Home</a></div>
+        <div class="nav_a_wraper"><a href="projects.html">Projects</a></div>
+        <div class="nav_a_wraper"><a href="skills.html">Skills</a></div>
+        <div class="nav_a_wraper"><a href="who_am_i.html">About</a></div>
+       <div class="nav_a_wraper"> <a href="contacts.html">Contact</a></div>
 
 
-</header>
-<section>
-<p class="introduction">Hello, my name is Georgi Dimitranov.<br> A 20-year-old self-taught WEB designer who wants to become a professional.</p>
- <a href="projects.html"> <button class="discover-me-btn">DISCOVER MY WORK</button></a>
-<div class="social-media-wraper">
-  <ul>
-        <li><a href="https://github.com/dimitranov/myprojects" class="git_anchor"><img src="images/giticon.png" id="github_icon" 
-          class="social-media-icon"></a></li>
-        <li><a href="https://www.facebook.com/georgi.dimitranov"><img src="images/fbicon.png" id="facebook_icon" 
-          class="social-media-icon"></a></li>
-           <li><a href="https://www.instagram.com/dimitranov/"><img src="images/igramicon.png" id="instagram_icon" 
-          class="social-media-icon"></a></li>
-
-  </ul>
-</div>
-<p class="under-social-media">Find me on social media</p>
-<p class="C_R_p">Copyright &copy; 2017 Georgi Dimitranov</p>
+    </div>
+    <header>
 
 
-</section>
+
+        <a href="contacts.html"><img src="images/GD_logo_full.png" class="logo-img-full" id="logo">
+        </a>
+
+
+
+        <div class="hamburger_activator"></div>
+        <div class="navigation-hamburger"><a class="nav-toggle" href="#"><span></span></a>
+        </div>
+
+
+
+        <p class="title out_of_place">dimitranov</p>
+        <p class="under-title out_of_place">Web <span>ui/ux</span> designer</p>
+
+
+    </header>
+    <section>
+        <p class="introduction out_of_place">Hello, my name is Georgi Dimitranov.
+            <br> A 20-year-old WEB designer who wants to become a professional.</p>
+
+        <a href="projects.html">
+            <button class="discover-me-btn out_of_fade">DISCOVER MY WORK</button>
+        </a>
+
+        <div class="social-media-wraper">
+            <ul>
+                <li class="out_of_place">
+                    <a href="https://github.com/dimitranov/myprojects" class="git_anchor"><img src="images/svg/homeINSTA.svg" id="instagram_icon" class="social-media-icon">
+                    </a>
+                </li>
+                <li class="out_of_place">
+                    <a href="https://www.facebook.com/georgi.dimitranov"><img src="images/svg/homeFB.svg" id="facebook_icon" class="social-media-icon">
+                    </a>
+                </li>
+                <li class="out_of_place">
+                    <a href="https://www.instagram.com/dimitranov/">
+                    <img src="images/svg/homeGIT.svg" id="github_icon" class="social-media-icon">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <p class="under-social-media out_of_fade">Find me on social media</p>
+        <p class="C_R_p out_of_fade">Copyright &copy; 2017 Georgi Dimitranov</p>
+
+
+    </section>
 
 
 
 
 </body>
+
 </html>

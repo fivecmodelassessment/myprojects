@@ -1,65 +1,96 @@
+jQuery(function () {
+
 $(document).ready(function () {
 
-$(window).scroll(function  () {
-	
-	var  wScroll = $(this).scrollTop();
-	
 
 
-	
 
-});
 
-$(".navigation-hamburger").click(function(event) {
+$(".hamburger_activator").click(function(event) {
 $(".nav-toggle").toggleClass("active");
-	/* Act on the event */
+    /* Act on the event */
 });
+
+
 var nav_switch = true;
 function Side_nav_visible() {
-	if (!nav_switch) {
-		$(".side-menu").css('width', '0px');
-		$(".navigation-hamburger").css('right', '0px');
-		$(".navigation-hamburger").css('position', 'relative');
-		$(".tr1").removeClass('tr1_an');
-		$(".tr2").removeClass('tr2_an');
-		$(".tr3").removeClass('tr3_an');
-		$(".tr4").removeClass('tr4_an');
-		$(".tr5").removeClass('tr5_an');
-		$(".tr6").removeClass('tr6_an');
-		$(".tr7").removeClass('tr7_an');
-		$(".tr8").removeClass('tr8_an');
-		$(".tr9").removeClass('tr9_an');
-		$(".tr10").removeClass('tr10_an');
-	}else{
-		$(".side-menu").css('width', '250px');
-		$(".navigation-hamburger").css('right', '60px');
-		$(".navigation-hamburger").css('position', 'fixed');
+    if (!nav_switch) {
+        $(".side-menu").removeClass('side_menu_avtive');
+        $(".navigation-hamburger").removeClass('navigation-hamburger_active');
+        $(".hamburger_activator").removeClass('hamburger_activator_moved');
 
-		$(".tr1").addClass('tr1_an');
-		$(".tr2").addClass('tr2_an');
-		$(".tr3").addClass('tr3_an');
-		$(".tr4").addClass('tr4_an');
-		$(".tr5").addClass('tr5_an');
-		$(".tr6").addClass('tr6_an');
-		$(".tr7").addClass('tr7_an');
-		$(".tr8").addClass('tr8_an');
-		$(".tr9").addClass('tr9_an');
-		$(".tr10").addClass('tr10_an');
-	}
+        if ($(window).width() > 800) {
+            
+                     
+            
+        }
+
+        
+        
+        
+    }else{
+        $(".side-menu").addClass('side_menu_avtive');
+         $(".navigation-hamburger").addClass('navigation-hamburger_active');
+        $(".hamburger_activator").addClass('hamburger_activator_moved');
+
+         if ($(window).width() > 800) {
+            
+            
+            }
+
+       
+        
+        
+    }
 nav_switch = !nav_switch;
+}
 
 
+$(".hamburger_activator").click(Side_nav_visible);
+if ($(window).width() > 1000) {
+    $(".nav_a_wraper").hover(function() {
+        $(this).addClass('nav_a_wraper_active');
+    }, function() {
+        $(this).removeClass('nav_a_wraper_active');
+    });
 
 }
-$(".navigation-hamburger").click(Side_nav_visible);
 
 
 
+    
 
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'pie',
 
+    // The data for our dataset
+    data: {
+        labels: ["HTML", "CSS", "JavaScript", "jQuery", "PhotoShop"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: ["#f2895c","#5db1ee","#f4d45f","#1b82b4","#3d3c75"],
+            borderColor: 'rgba(0,0,0,0.0)',
+            data: [11, 37, 10, 34, 8],
+        }]
+    },
 
-
-
+    // Configuration options go here
+    options: {
+        legend: {
+            labels: {
+                fontColor: "#333",
+                fontSize: 13
+            }
+        },
+        pieceLabel: {
+    render: 'percentage',
+    fontColor: 'white',
+    precision: 2
+  }
+    }
+});
 
 
 
@@ -70,3 +101,14 @@ $(".navigation-hamburger").click(Side_nav_visible);
 
 
 });
+
+
+
+
+
+
+
+
+    
+});//end jq
+

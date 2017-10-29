@@ -29,16 +29,19 @@ $(".fore-watch").css({
 
 //navigation scroll lock on  top
 // the class .main-navigation-parrent
-if (wScroll > 725 ) {
+if (wScroll > 400 ) {
 
 $(".main-navigation-parrent").addClass("main-navigation-parrent-passClass");
-$(".watch-pics").css({'margin-top':'35px'});
+$(".main-navigation").addClass("main-navigation_on_scroll");
+$("article").css({'margin-top':'35px'});
 
 }//end of main if
  
- if (wScroll < 725) {
+ if (wScroll < 400) {
 $(".main-navigation-parrent").removeClass("main-navigation-parrent-passClass");
-$(".watch-pics").css({'margin-top':'0'});
+$(".main-navigation").removeClass("main-navigation_on_scroll");
+
+$("article").css({'margin-top':'0'});
 }//end of main if
 
 

@@ -8,14 +8,16 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    
 
-     <script src="https://code.jquery.com/jquery-3.0.0.js"
-              integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="
-              crossorigin="anonymous"></script>
+
+     <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" type="text/css" href="vindol_newCss.css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans:300&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <title>Car Variables</title>
 
 </head>
@@ -23,9 +25,12 @@
 <body>
 
 
-
+<ul class="nav">
+  
+</ul>
     <!--logo -->
     <div class="header">
+    <img src="img/GD_logo_new_black.png" class="logo">
         <div class="logos1">
             <p class="car-app-title">Car Variables</p>
         </div>
@@ -228,7 +233,8 @@
 
         
 <div class="text1">Разстояние:</div>
-            <input data-role="none" class=i2 name="raztoqnie_2_1" id="razN" type="number"   title="Въведете желано от вас разстояние" readonly><span class="span1"> км.</span>
+            <input data-role="none" class=i2 name="raztoqnie_2_1" id="razN" type="number"    readonly>
+            <span class="span1"> км.</span>
 
 
                         <br>
@@ -869,6 +875,23 @@ $(".button2 , .button21 , .button22 , .clear_btn").bind('touchstart touchend', f
         $(this).toggleClass('button_clicked');
     });
 
+$("input").click(function(event) {
+  var filter_scroll_top = $(this).offset().top;
+  $("html, body").animate({ scrollTop: filter_scroll_top-45 }, 200);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     });
 </script>
@@ -914,24 +937,22 @@ var myForm = document.form1;
 
 
 // za purva stranica na 2 main stranica 
-var myForm21 = document.form11;
-  
-  function cal21 () {
+var myForm21 = document.form21;
+ // za vtora stranica na vrora main  strabica
+var myForm22 = document.form22; 
 
-  
-  myForm21.raztoqnie_2_1.value = (((myForm21.zarejdane_2_1.value/myForm21.cenagorivo_2_1.value) *100 ) / myForm21.razhod_2_1.value ).toFixed(2);
+
+function cal21() {
+myForm21.raztoqnie_2_1.value = 
+(((myForm21.zarejdane_2_1.value/myForm21.cenagorivo_2_1.value) *100 ) / myForm21.razhod_2_1.value ).toFixed(2);
 }
 
-// za vtora stranica na vrora main  strabica
-var myForm22 = document.form12;
 
 
-function cal22 () {
-  
 
-
-  myForm22.raztoqnie_2_2.value = (( myForm22.litri_2_2.value *100) / myForm22.razhod_2_2.value).toFixed(2);
-
+function cal22() {
+  myForm22.raztoqnie_2_2.value = 
+  (( myForm22.litri_2_2.value *100) / myForm22.razhod_2_2.value).toFixed(2);
 }
 
 
@@ -943,16 +964,12 @@ var myForm32 = document.form32;
  
 
 function cal31() {
-  
-
- 
-  
-  myForm31.razhod_3_1.value = (((100 * myForm31.zarejdane_3_1.value) / (myForm31.raztoqnie_3_1.value * myForm31.cenagorivo_3_1.value))*myForm31.nachinnakarane_3_1.value).toFixed(2);
-
+ myForm31.razhod_3_1.value = 
+ (((100 * myForm31.zarejdane_3_1.value) / (myForm31.raztoqnie_3_1.value * myForm31.cenagorivo_3_1.value))*myForm31.nachinnakarane_3_1.value).toFixed(2);
 }
 function cal32() {
-  
-  myForm32.razhod_3_2.value = (((100 * myForm32.litri_3_2.value) / myForm32.raztoqnie_3_2.value)*myForm32.nachinnakarane_3_2.value).toFixed(2);
+  myForm32.razhod_3_2.value = 
+  (((100 * myForm32.litri_3_2.value) / myForm32.raztoqnie_3_2.value)*myForm32.nachinnakarane_3_2.value).toFixed(2);
 }
 
 
@@ -989,7 +1006,7 @@ var myForm4 = document.form4;
             myForm4.RazhodNaChas.value =
                 (((((((((myForm4.kubici.value / 2) / 1000) * myForm4.oboroti.value) * 60) / 1.414) / 1000) * 1.084) / 15.7) / 0.73).toFixed(3);
 
-            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(3);
+            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(2);
 
 
 
@@ -998,7 +1015,7 @@ var myForm4 = document.form4;
 
             myForm4.RazhodNaChas.value =
                 (((((((((myForm4.kubici.value / 2) / 1000) * myForm4.oboroti.value) * 60) / 1.414) / 1000) * 1.084) / 24.5) / 0.54).toFixed(3);
-            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(3);
+            myForm4.CenaNaChas.value = (myForm4.RazhodNaChas.value * myForm4.gorivo.value).toFixed(2);
         }
 
         if (document.forms["form4"]["gorivo"].value == "2.02") {
@@ -1010,9 +1027,9 @@ var myForm4 = document.form4;
 
         }
 
-        myForm4.RazhodZaIzbranoVreme.value = ((myForm4.RazhodNaChas.value * myForm4.vreme.value) / 3600).toFixed(6);;
+        myForm4.RazhodZaIzbranoVreme.value = ((myForm4.RazhodNaChas.value * myForm4.vreme.value) / 3600).toFixed(4);;
 
-        myForm4.CenaZaIzbranoVreme.value = (myForm4.RazhodZaIzbranoVreme.value * myForm4.gorivo.value).toFixed(6);
+        myForm4.CenaZaIzbranoVreme.value = (myForm4.RazhodZaIzbranoVreme.value * myForm4.gorivo.value).toFixed(4);
 
 
 

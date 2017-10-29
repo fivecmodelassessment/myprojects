@@ -72,7 +72,9 @@ var Test = React.createClass({
         		
         		</div>
         	<p className="history-brands-title">{this.state.year}</p>
-        	<img src="assets/textdecoration3.png" className="image-under-headings"/>
+          <div className="history_image_wraper">
+        	<img src="assets/textdecoration3.png" className="image-under-headings"/> 
+          </div>
         	<p className="history-main-p history-main-p-react">{text}</p> 
         	
         	</div>
