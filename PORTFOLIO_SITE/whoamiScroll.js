@@ -1,6 +1,6 @@
 $(function () {
 	jQuery(document).ready(function($) {
-		
+
 if($(window).width() > 480){
 
 		$("*").removeClass('out_of_fade');
@@ -10,7 +10,11 @@ if($(window).width() > 480){
 			setTimeout(function () {
 		$(".who_am_i_text").addClass('in_place');
 		},300);
-			
+
+		setTimeout(function () {
+			$(".photo_wraper").addClass('in_place');
+		},350);
+
 
 			setTimeout(function () {
 		$(".the_vision").addClass('in_place');
@@ -26,13 +30,13 @@ if($(window).width() > 480){
 			setTimeout(function () {
 		$(".the_quest_text").addClass('in_place');
 		},1400);
-		
-		
-		
-	
+
+
+
+
 
 	}else{
-		
+
 
 		setTimeout(function () {
 			$(".title").addClass('in_place');
@@ -50,8 +54,8 @@ if($(window).width() > 480){
 			var the_quest = $(".the_quest").offset().top - wScroll;
 			var the_quest_text = $(".the_quest_text").offset().top - wScroll;
 			var who_am_i_main_btn = $(".who_am_i_main_btn").offset().top - wScroll;
-			
-			
+
+
 
 
 	if (the_vision < windHeight-(windHeight*0.1)) {
@@ -69,7 +73,7 @@ if($(window).width() > 480){
 		}
 
 
-			
+
 
 
 
@@ -101,7 +105,7 @@ if($(window).width() > 480){
 
 /*
 setTimeout(function () {
-			
+
 		setTimeout(function () {
 			$(".under-title").addClass('in_place');
 		},200);
@@ -111,12 +115,12 @@ setTimeout(function () {
 		setTimeout(function () {
 			$(".discover-me-btn").addClass('in_fade');
 		},800);
-		
+
 		setTimeout(function () {
 			$(".social-media-wraper ul li").each(function(i) {
 				setTimeout(function  () {
-				
-					
+
+
 						$(".social-media-wraper ul li").eq(i).addClass('in_place');
 					}  , 150 * (i+1) );
 				});
